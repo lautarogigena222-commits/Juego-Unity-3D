@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fba83685181f74ba42564f73056103, type: 3}
+  m_Name: BasicSword
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemName: Basic Sword
+  description: A Basic Sword
+  icon: {fileID: 21300000, guid: d0f583b522fd62746bf9e5b11da1c610, type: 3}
+  itemPrefab: {fileID: 919132149155446097, guid: f3c5e9c4e8481a148af480953a7a405e, type: 3}
+  itemType: 0
+  damage: 50
