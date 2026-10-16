@@ -173,7 +173,3 @@ public class MovePlayer : MonoBehaviour
         }
     }*/
 }
-
-
-
-
