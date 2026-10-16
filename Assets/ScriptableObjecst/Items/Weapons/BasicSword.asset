@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Basic Sword
   description: A Basic Sword
-  icon: {fileID: 21300000, guid: d0f583b522fd62746bf9e5b11da1c610, type: 3}
+  icon: {fileID: 21300000, guid: 0a16a3d7802143a4d8838e2cbb2dc4b3, type: 3}
   itemPrefab: {fileID: 919132149155446097, guid: f3c5e9c4e8481a148af480953a7a405e, type: 3}
   itemType: 0
   damage: 50
