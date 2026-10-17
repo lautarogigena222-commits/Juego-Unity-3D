@@ -85830,7 +85830,7 @@ Transform:
   m_GameObject: {fileID: 2185822602920240121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.918, y: 80.875, z: 17.268002}
+  m_LocalPosition: {x: 24.918, y: 68.26304, z: 17.268002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87083,7 +87083,7 @@ Transform:
   m_GameObject: {fileID: 6861552898073320187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.164795, z: 0}
+  m_LocalPosition: {x: 0, y: -14.77676, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -87415,6 +87415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
   attackDuration: 1.15
+  attackCooldown: 1.15
 --- !u!114 &7176342165400880777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87559,7 +87560,7 @@ Transform:
   m_GameObject: {fileID: 9135647950727448876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0020008087, y: 0.22020721, z: -10.380001}
+  m_LocalPosition: {x: -0.0020008087, y: -12.391754, z: -10.379999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

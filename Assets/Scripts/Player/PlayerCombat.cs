@@ -9,8 +9,9 @@ public class PlayerCombat : MonoBehaviour
     // Indica si el jugador está realizando un ataque
     public bool IsAttacking { get; private set; }
 
-    // Duración aproximada del ataque
-    [SerializeField] private float attackDuration = 1.36f;
+    [Header("Ataque")]
+    [SerializeField] private float attackCooldown = 0.4f;
+    private float lastAttackTime;
 
     private void Start()
     {
@@ -35,17 +36,19 @@ public class PlayerCombat : MonoBehaviour
 
     private void Attack()
     {
-        // Evita iniciar otro ataque mientras el actual está en curso
-        if (IsAttacking)
+        if (Time.time < lastAttackTime + attackCooldown)
             return;
 
-        IsAttacking = true;
+        lastAttackTime = Time.time;
 
-        Debug.Log("ATAQUE");
+        animator.Play("Melee_1H_Attack_Slice_Horizontal", 1, 0f);
+    }
 
+    private System.Collections.IEnumerator ResetAndTriggerAttack()
+    {
+        animator.ResetTrigger("Attack");
+        yield return null; // Espera un frame para que el Animator limpie el estado anterior
         animator.SetTrigger("Attack");
-
-        Invoke(nameof(EndAttack), attackDuration);
     }
 
     private void EndAttack()
