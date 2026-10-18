@@ -327,7 +327,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: upperarm.r
       parentName: chest
-      position: {x: 0.391, y: 0.134, z: -0.01}
+      position: {x: 0.431, y: 0.13, z: -0.016}
       rotation: {x: -0.5141217, y: -0.48546743, z: -0.48546806, w: 0.5141216}
       scale: {x: 0.99999934, y: 0.99999934, z: 0.9999998}
     - name: lowerarm.r
