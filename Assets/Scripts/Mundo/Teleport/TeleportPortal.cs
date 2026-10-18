@@ -9,26 +9,29 @@ public class TeleportPortal : MonoBehaviour, IInteractable
 
     private bool teleporting = false;
 
-    public void Interact()
-    {
-        Teleport();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInParent<ThirdPersonController>() != null)
-            Teleport();
+        ThirdPersonController tpc = other.GetComponentInParent<ThirdPersonController>();
+
+        if (tpc != null)
+            Teleport(tpc.gameObject); // usamos directamente el GO del ThirdPersonController
     }
 
-    private void Teleport()
+    public void Interact()
+    {
+        ThirdPersonController tpc = FindFirstObjectByType<ThirdPersonController>();
+        if (tpc != null)
+            Teleport(tpc.gameObject);
+    }
+
+    private void Teleport(GameObject player)
     {
         if (teleporting || destination == null) return;
         teleporting = true;
 
-        GameObject player = GameObject.FindWithTag("Player");
-        if (player == null) { teleporting = false; return; }
-
-        ThirdPersonController cc = player.GetComponent<ThirdPersonController>();
+        CharacterController cc = player.GetComponent<CharacterController>();
+        if (cc == null) { teleporting = false; return; }
 
         cc.enabled = false;
         player.transform.position = destination.position;
