@@ -6,8 +6,8 @@ public class PlayerCombat : MonoBehaviour
     private Animator animator;
     private PlayerControls controls;
 
-    // Indica si el jugador está realizando un ataque
-    public bool IsAttacking { get; private set; }
+    // Indica si el jugador está realizando un ataque
+    public bool IsAttacking { get; private set; }
 
     [Header("Ataque")]
     [SerializeField] private float attackCooldown = 0.4f;
@@ -26,9 +26,9 @@ public class PlayerCombat : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext ctx)
     {
-        // Si el inventario está abierto y el cursor está libre,
-        // no permitime atacar con el clic izquierdo.
-        if (Cursor.lockState != CursorLockMode.Locked)
+        // Si el inventario está abierto y el cursor está libre,
+        // no permitime atacar con el clic izquierdo.
+        if (Cursor.lockState != CursorLockMode.Locked)
             return;
 
         Attack();
@@ -41,14 +41,14 @@ public class PlayerCombat : MonoBehaviour
 
         lastAttackTime = Time.time;
 
-        animator.Play("Melee_1H_Attack_Slice_Horizontal", 1, 0f);
+        animator.Play("2Hand-Sword-Attack1", 1, 0f);
     }
 
     private System.Collections.IEnumerator ResetAndTriggerAttack()
     {
         animator.ResetTrigger("Attack");
         yield return null; // Espera un frame para que el Animator limpie el estado anterior
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
     }
 
     private void EndAttack()
@@ -75,5 +75,10 @@ public class PlayerCombat : MonoBehaviour
         }
 
         CancelInvoke();
+    }
+
+    public void Hit()
+    {
+
     }
 }
