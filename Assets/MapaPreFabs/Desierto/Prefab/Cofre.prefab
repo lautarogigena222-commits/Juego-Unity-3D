@@ -1269,7 +1269,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: c21a2005a29e546b0a7b549b425f40bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1627,7 +1627,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: f9e6275bce9df4ea089dd911f27a48d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1748,7 +1748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e901c3f4eea5fb49b09b3d4ba1a67ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cofre
-  vidaCofree: 5
+  chestHealth: 0
   possibleUpgrades:
   - {fileID: 11400000, guid: 7e9660c364b5395499451a73ee0067ba, type: 2}
   - {fileID: 11400000, guid: 708c0fe408abfac45bed641017ce0ed5, type: 2}
@@ -2076,7 +2076,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 7056a0a602dda4e3d8ca4b0c1530dbf9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2433,7 +2433,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 7056a0a602dda4e3d8ca4b0c1530dbf9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
