@@ -1,7 +1,7 @@
 using UnityEngine;
 using StarterAssets;
 
-public class TeleportPortal : MonoBehaviour
+public class TeleportPortal : MonoBehaviour, IInteractable
 {
     [Header("Configuración")]
     [SerializeField] private Transform destination;
@@ -18,6 +18,12 @@ public class TeleportPortal : MonoBehaviour
             Teleport(tpc.gameObject); // usamos directamente el GO del ThirdPersonController
     }
 
+    public void Interact()
+    {
+        ThirdPersonController tpc = FindFirstObjectByType<ThirdPersonController>();
+        if (tpc != null)
+            Teleport(tpc.gameObject);
+    }
 
     private void Teleport(GameObject player)
     {
