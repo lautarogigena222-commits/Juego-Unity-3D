@@ -103371,8 +103371,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2185822602920240121}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0020000003, y: 68.15501, z: 11.846001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0020000003, y: 68.075005, z: 11.846001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104411,7 +104411,7 @@ Transform:
   m_GameObject: {fileID: 4400386330568478494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 80.48, z: 22.226}
+  m_LocalPosition: {x: 0, y: 80.4, z: 22.226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -109524,7 +109524,6 @@ GameObject:
   - component: {fileID: 7176342165400880776}
   - component: {fileID: 7176342165400880783}
   - component: {fileID: 7176342165400880782}
-  - component: {fileID: 7176342165400880784}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Untagged
@@ -109769,23 +109768,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7176342165400880784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6861552898073320187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea881133b979d5146a573766ef9d13cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  playerSoundController: {fileID: 7176342165400880782}
-  moveSpeed: 5
-  runSpeed: 8
-  jumpHeight: 1.5
-  rotationSpeed: 10
 --- !u!114 &7993908929471687135
 MonoBehaviour:
   m_ObjectHideFlags: 0

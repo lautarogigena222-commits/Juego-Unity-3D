@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using StarterAssets;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class PlayerCombat : MonoBehaviour
         if (Time.time < lastAttackTime + attackCooldown)
             return;
         lastAttackTime = Time.time;
-        animator.Play("2Hand-Sword-Attack1", 1, 0f);
+        animator.Play("1Hand_Up_Attack_A_3", 1, 0f);
         playerSoundController.playAtacar();
 
 
