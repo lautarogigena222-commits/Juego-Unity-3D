@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public PlayerSoundController playerSoundController;
     private PlayerControls controls;
     private CharacterController characterController;
     private Animator animator;
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
             );
 
             animator.SetBool("IsJumping", true);
+            playerSoundController.playSaltar();
         }
     }
 

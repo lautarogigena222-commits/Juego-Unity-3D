@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public PlayerSoundController playerSoundController;
     private Animator animator;
     private PlayerControls controls;
 
@@ -32,16 +33,20 @@ public class PlayerCombat : MonoBehaviour
             return;
 
         Attack();
+        
     }
 
     private void Attack()
     {
+    
         if (Time.time < lastAttackTime + attackCooldown)
             return;
-
         lastAttackTime = Time.time;
-
         animator.Play("2Hand-Sword-Attack1", 1, 0f);
+        playerSoundController.playAtacar();
+
+
+
     }
 
     private System.Collections.IEnumerator ResetAndTriggerAttack()
