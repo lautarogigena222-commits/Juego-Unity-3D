@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float detectionRange;
 
     public GameObject target;
+    private Spawn spawner;
 
     //rutina
     [SerializeField] int rutina;
@@ -88,6 +89,7 @@ public class Enemy : MonoBehaviour
         enemyLife -= amount;
         CheckDeath();
     }
+
     private void CheckDeath()
     {
         if (enemyLife <= 0)
@@ -99,6 +101,11 @@ public class Enemy : MonoBehaviour
                 {
                     playerStats.MasExp(expEnemy);
                 }
+            }
+
+            if (spawner != null)
+            {
+                spawner.OnEnemyDied();
             }
 
             DropMoneda();
@@ -152,6 +159,11 @@ public class Enemy : MonoBehaviour
                 transform.Translate(Vector3.forward * 1 * Time.deltaTime);
                 break;
         }
+    }
+
+    public void SetSpawner(Spawn s)
+    {
+        spawner = s;
     }
 
 }

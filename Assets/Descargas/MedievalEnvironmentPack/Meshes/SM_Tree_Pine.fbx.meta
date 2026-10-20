@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7948d217b1ca412f82efebcd53d38b5
+guid: 941efb0f211d3874090faba35d37657f
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -108,10 +108,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 412790
-  packageName: Free Low Poly Medieval Environment Pack
-  packageVersion: 1.0
-  assetPath: Assets/MedievalEnvironmentPack/Meshes/SM_Tree_Pine.fbx
-  uploadId: 1008362

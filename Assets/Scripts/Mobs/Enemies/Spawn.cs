@@ -1,76 +1,94 @@
 using UnityEngine;
 
-public class Spawn : MonoBehaviour
+public class Spawn: MonoBehaviour
 {
-    //Spawn
-    [SerializeField] float timeBetweenSpawn;
+    [Header("Spawn")]
+    [SerializeField] private float timeBetweenSpawn = 3f;
     private float spawnTime;
+    private bool playerInZone = false;
 
-  
+    
+    [Header("Zona de detección")]
+    [SerializeField] private float detectionRadius = 15f;
+    [SerializeField] private LayerMask playerLayer;
 
-
-    //Enemigos
-    [SerializeField] GameObject enemy;
+    
+    [Header("Enemigos")]
+    [SerializeField] private GameObject enemy;
     [SerializeField] private int enemyNumber;
     [SerializeField] private int maxEnemies;
-    [SerializeField] bool spawnEnemies = false;
+    [SerializeField] private bool spawnEnemies = false;
 
-    //Animales
-    [SerializeField] GameObject animal;
+    
+    [Header("Animales")]
+    [SerializeField] private GameObject animal;
     [SerializeField] private int animalNumber;
     [SerializeField] private int maxAnimals;
-    [SerializeField] bool spawnAnimals = false;
-
-    //Collider
- 
-
-    void Start()
-    {
-        
-    }
+    [SerializeField] private bool spawnAnimals = false;
 
     void Update()
     {
-        
-        if(enemyNumber < maxEnemies)
-        {
+        DetectPlayer();
+
+        if (!playerInZone) return;
+
+        if (spawnEnemies && enemyNumber < maxEnemies)
             SpawnEnemy();
-        }
-        if(animalNumber < maxAnimals)
-        {
+
+        if (spawnAnimals && animalNumber < maxAnimals)
             SpawnAnimal();
-        }
+    }
 
-           
+    private void DetectPlayer()
+    {
+        Collider[] hits = Physics.OverlapSphere(
+            transform.position,
+            detectionRadius,
+            playerLayer
+        );
 
-
+        playerInZone = hits.Length > 0;
     }
 
     private void SpawnEnemy()
     {
         spawnTime += Time.deltaTime;
-        if (spawnTime > timeBetweenSpawn)
-        {
-            Instantiate(enemy, transform.position, Quaternion.identity);       
+        if (spawnTime < timeBetweenSpawn) return;
 
-            spawnTime = 0;
-            enemyNumber++;
-        }
+        GameObject spawnedEnemy = Instantiate(
+            enemy,
+            transform.position,
+            Quaternion.identity
+        );
+
+        // Le pasa referencia al spawner para que avise al morir
+        Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();
+        if (enemyScript != null)
+            enemyScript.SetSpawner(this);
+
+        spawnTime = 0;
+        enemyNumber++;
     }
 
     private void SpawnAnimal()
     {
         spawnTime += Time.deltaTime;
-        if (spawnTime > timeBetweenSpawn)
-        {
-            Instantiate(animal, transform.position, Quaternion.identity);
-            spawnTime = 0;
-            animalNumber++;
-        }
-    } 
+        if (spawnTime < timeBetweenSpawn) return;
 
-       
+        Instantiate(animal, transform.position, Quaternion.identity);
+        spawnTime = 0;
+        animalNumber++;
+    }
 
+    public void OnEnemyDied()
+    {
+        enemyNumber--;
+        if (enemyNumber < 0) enemyNumber = 0;
+    }
 
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+    }
 }
