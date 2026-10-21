@@ -67,15 +67,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-      
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            TakeDamage(collision.gameObject.GetComponent<PlayerStats>().PlayerDamage);
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))

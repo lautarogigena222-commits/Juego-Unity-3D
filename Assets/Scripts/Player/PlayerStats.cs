@@ -66,20 +66,19 @@ public class PlayerStats : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             life -= collision.gameObject.GetComponent<Enemy>().Damge;
-            exp += collision.gameObject.GetComponent<Enemy>().ExpEnemy;
-            
+
             vida.fillAmount = (float)life / lifeMax;
-            experiencia.fillAmount = (float)exp / expMax;
         }
+
         if (collision.gameObject.CompareTag("Animal"))
         {
             Destroy(collision.gameObject);
         }
-       /* if (life <= 0)
-        {
-            DefeatScene();
+        /* if (life <= 0)
+         {
+             DefeatScene();
 
-        }*/
+         }*/
 
     }
 

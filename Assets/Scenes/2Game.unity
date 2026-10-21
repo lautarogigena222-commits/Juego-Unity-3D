@@ -12829,6 +12829,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 941efb0f211d3874090faba35d37657f, type: 3}
   m_PrefabInstance: {fileID: 751435060}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &365886041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365886043}
+  - component: {fileID: 365886042}
+  m_Layer: 0
+  m_Name: EnemySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &365886042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365886041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  timeBetweenSpawn: 3
+  detectionRadius: 15
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  enemy: {fileID: 0}
+  enemyNumber: 0
+  maxEnemies: 0
+  spawnEnemies: 0
+  animal: {fileID: 0}
+  animalNumber: 0
+  maxAnimals: 0
+  spawnAnimals: 0
+--- !u!4 &365886043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365886041}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -110.44032, y: 65.68802, z: 63.97844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &365993002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143962,7 +144019,7 @@ Transform:
   m_GameObject: {fileID: 2185822602920240121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -112.002, y: 69.916, z: 52.02}
+  m_LocalPosition: {x: -112.002, y: 68.19301, z: 52.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -160771,7 +160828,7 @@ Transform:
   m_GameObject: {fileID: 6861552898073320187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.009, z: 0}
+  m_LocalPosition: {x: 0, y: -1.731995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -166589,8 +166646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
-  SprintSpeed: 5.335
+  MoveSpeed: 8
+  SprintSpeed: 15
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
@@ -167063,7 +167120,7 @@ Transform:
   m_GameObject: {fileID: 9135647950727448876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0019989014, y: 2.3759995, z: -10.380001}
+  m_LocalPosition: {x: -0.0019989014, y: 0.6530075, z: -10.380001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167504,3 +167561,4 @@ SceneRoots:
   - {fileID: 1018677650}
   - {fileID: 196576122}
   - {fileID: 5753038635769145899}
+  - {fileID: 365886043}
