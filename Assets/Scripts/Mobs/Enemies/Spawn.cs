@@ -4,7 +4,8 @@ public class Spawn: MonoBehaviour
 {
     [Header("Spawn")]
     [SerializeField] private float timeBetweenSpawn = 3f;
-    private float spawnTime;
+    private float spawnTimeEnemy;
+    [SerializeField]  private float spawnTimeAnimal;
     private bool playerInZone = false;
 
     
@@ -52,31 +53,27 @@ public class Spawn: MonoBehaviour
 
     private void SpawnEnemy()
     {
-        spawnTime += Time.deltaTime;
-        if (spawnTime < timeBetweenSpawn) return;
+        spawnTimeEnemy += Time.deltaTime;
+        if (spawnTimeEnemy < timeBetweenSpawn) return;
 
-        GameObject spawnedEnemy = Instantiate(
-            enemy,
-            transform.position,
-            Quaternion.identity
-        );
+        GameObject spawnedEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
 
         // Le pasa referencia al spawner para que avise al morir
         Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();
         if (enemyScript != null)
             enemyScript.SetSpawner(this);
 
-        spawnTime = 0;
+        spawnTimeEnemy = 0;
         enemyNumber++;
     }
 
     private void SpawnAnimal()
     {
-        spawnTime += Time.deltaTime;
-        if (spawnTime < timeBetweenSpawn) return;
+        spawnTimeAnimal += Time.deltaTime;
+        if (spawnTimeAnimal < timeBetweenSpawn) return;
 
         Instantiate(animal, transform.position, Quaternion.identity);
-        spawnTime = 0;
+        spawnTimeAnimal = 0;
         animalNumber++;
     }
 

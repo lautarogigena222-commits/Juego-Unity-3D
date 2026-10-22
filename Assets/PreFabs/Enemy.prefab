@@ -136,7 +136,7 @@ MonoBehaviour:
   angulo: {x: 0, y: 0, z: 0, w: 0}
   grado: 0
   damage: 3
-  enemyLife: 5
+  enemyLife: 50
   moneda: {fileID: 869485794138678735, guid: 384c41e16ca34b544b4611f83a4063a7, type: 3}
   drop: 0
   expEnemy: 5

@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
    
     void Update()
     {
-        Comportamiento_Enemy();
+        //Comportamiento_Enemy();
 
         float distance = Vector3.Distance(transform.position, target.transform.position);
         if (distance < detectionRange)
@@ -72,6 +72,16 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             TakeDamage(other.GetComponent<BulletMovement>().Damage);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerStats playerStats = collision.gameObject.GetComponent<PlayerStats>();
+            if (playerStats != null)
+                TakeDamage(playerStats.PlayerDamage);
         }
     }
 
@@ -126,7 +136,7 @@ public class Enemy : MonoBehaviour
      
     }
 
-    public void Comportamiento_Enemy()
+   /*public void Comportamiento_Enemy()
     {
         cronometro += 1 * Time.deltaTime;
         if (cronometro >= 2)
@@ -150,7 +160,7 @@ public class Enemy : MonoBehaviour
                 transform.Translate(Vector3.forward * 1 * Time.deltaTime);
                 break;
         }
-    }
+    }*/
 
     public void SetSpawner(Spawn s)
     {
