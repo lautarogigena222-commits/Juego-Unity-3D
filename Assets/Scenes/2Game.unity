@@ -13761,7 +13761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 401530672}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -18770,7 +18770,7 @@ Transform:
   m_GameObject: {fileID: 484517081}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.8022, y: -10.01379, z: 692.7223}
+  m_LocalPosition: {x: -386, y: -10.01379, z: 309}
   m_LocalScale: {x: 72.87697, y: 1, z: 76}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -29061,11 +29061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 0}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 5
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -29074,6 +29069,7 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 10
+  enemy: {fileID: 4641162599894494825, guid: c18328623d6499747875b0bab9e99ab1, type: 3}
   spawnEnemies: 1
   animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
   animalNumber: 0
@@ -31710,79 +31706,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 941efb0f211d3874090faba35d37657f, type: 3}
---- !u!1001 &752536964
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1716175411}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10.875803
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 7.6469
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.6468997
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -264.954
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.73162377
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -75.55178
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7778526
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6284469
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 77.871
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 797573857538373137, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: c21a2005a29e546b0a7b549b425f40bb, type: 2}
-    - target: {fileID: 919132149155446097, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-      propertyPath: m_Name
-      value: PT_Wooden_Bridge_02
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
 --- !u!1001 &754163286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33215,11 +33138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 750889050397554082, guid: 82e92d24e92763d46892c18d9721ad78, type: 3}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 3
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -33228,6 +33146,7 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 50
+  enemy: {fileID: 0}
   spawnEnemies: 1
   animal: {fileID: 0}
   animalNumber: 0
@@ -55858,11 +55777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 0}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 5
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -55871,6 +55785,7 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 10
+  enemy: {fileID: 4641162599894494825, guid: c18328623d6499747875b0bab9e99ab1, type: 3}
   spawnEnemies: 1
   animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
   animalNumber: 0
@@ -61594,15 +61509,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222166115}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.23949003, y: -1.5, z: -2.1299999}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.059, y: -1.5, z: 0.209}
   m_LocalScale: {x: 0.0106382985, y: 0.99829555, z: 0.013157894}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2059601047}
   - {fileID: 180323106}
   m_Father: {fileID: 484517087}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1222166117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72803,11 +72718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 750889050397554082, guid: 82e92d24e92763d46892c18d9721ad78, type: 3}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 3
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -72816,6 +72726,7 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 50
+  enemy: {fileID: 0}
   spawnEnemies: 1
   animal: {fileID: 0}
   animalNumber: 0
@@ -77169,8 +77080,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321611948}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -465.21008, y: 1, z: 37.50018}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -63.7, y: 1, z: 438.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -77178,7 +77089,7 @@ Transform:
   - {fileID: 620678709}
   - {fileID: 1991812299}
   m_Father: {fileID: 196576122}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1328042640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77316,11 +77227,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329230805}
   m_CullTransparentMesh: 1
---- !u!4 &1329259576 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 06585c4a497d08f4591a54ccfdb05bcf, type: 3}
-  m_PrefabInstance: {fileID: 752536964}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1329527480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 941efb0f211d3874090faba35d37657f, type: 3}
@@ -77620,11 +77526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 0}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 10
   spawnTimeAnimal: 0
   detectionRadius: 80
@@ -77633,8 +77534,9 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 0
+  enemy: {fileID: 4641162599894494825, guid: c18328623d6499747875b0bab9e99ab1, type: 3}
   spawnEnemies: 0
-  animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  animal: {fileID: 1105262836888474251, guid: b40904c0991156e42ba5b1cb1b0a728a, type: 3}
   animalNumber: 0
   maxAnimals: 10
   spawnAnimals: 1
@@ -79140,11 +79042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 750889050397554082, guid: 82e92d24e92763d46892c18d9721ad78, type: 3}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 3
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -79153,6 +79050,7 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 50
+  enemy: {fileID: 0}
   spawnEnemies: 1
   animal: {fileID: 0}
   animalNumber: 0
@@ -105401,7 +105299,6 @@ Transform:
   - {fileID: 1565616612}
   - {fileID: 547737773}
   - {fileID: 1724680281}
-  - {fileID: 1329259576}
   m_Father: {fileID: 1922753602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1716262291
@@ -107906,11 +107803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 0}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 5
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -107919,6 +107811,7 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 10
+  enemy: {fileID: 4641162599894494825, guid: c18328623d6499747875b0bab9e99ab1, type: 3}
   spawnEnemies: 1
   animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
   animalNumber: 0
@@ -139253,11 +139146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 0}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 5
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -139266,6 +139154,7 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 10
+  enemy: {fileID: 4641162599894494825, guid: c18328623d6499747875b0bab9e99ab1, type: 3}
   spawnEnemies: 1
   animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
   animalNumber: 0
@@ -142491,11 +142380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  enemyBosque: {fileID: 750889050397554082, guid: 82e92d24e92763d46892c18d9721ad78, type: 3}
-  enemyNieve: {fileID: 0}
-  enemyDesierto: {fileID: 0}
-  enemyPlaya: {fileID: 0}
-  enemyCueva: {fileID: 0}
   timeBetweenSpawn: 3
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -142504,6 +142388,7 @@ MonoBehaviour:
     m_Bits: 64
   enemyNumber: 0
   maxEnemies: 50
+  enemy: {fileID: 0}
   spawnEnemies: 1
   animal: {fileID: 0}
   animalNumber: 0
@@ -142979,7 +142864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1283307316103586727}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PlayerCameraRoot
   m_TagString: CinemachineTarget
   m_Icon: {fileID: 0}
@@ -143133,7 +143018,7 @@ Transform:
   m_GameObject: {fileID: 2185822602920240121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -51.592, y: 68.59509, z: 28.899998}
+  m_LocalPosition: {x: 138.018, y: 6.0950937, z: 28.899998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -143435,7 +143320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5753038635769145899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerKnight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -144172,7 +144057,7 @@ Transform:
   m_GameObject: {fileID: 4400386330568478494}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -51.59, y: 68.7, z: 39.28}
+  m_LocalPosition: {x: 138.02, y: 6.2, z: 39.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -166068,7 +165953,7 @@ MonoBehaviour:
   timeBetweenShots: 1.5
   range: 100
   damage: 5
-  projectilePrefab: {fileID: 5510413878570726118, guid: a83d8bdfc4d617347936085f20a49136, type: 3}
+  projectilePrefab: {fileID: 919132149155446097, guid: 3dffeef99fdfff54683254b46803678a, type: 3}
   firePoint: {fileID: 401530672}
 --- !u!114 &7176342165400880782
 MonoBehaviour:
@@ -166234,7 +166119,7 @@ Transform:
   m_GameObject: {fileID: 9135647950727448876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0019989014, y: -0.104904175, z: -10.380001}
+  m_LocalPosition: {x: -0.0019989014, y: -0.10490608, z: -10.380001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
