@@ -83,8 +83,21 @@ public class PlayerCombat : MonoBehaviour
         CancelInvoke();
     }
 
-    public void Hit()
+    public void EnableSwordHitbox()
     {
+        SwordHitbox hitbox = GetComponentInChildren<SwordHitbox>();
+        if (hitbox != null)
+        {
+            hitbox.EnableHitbox();
+        }
+    }
 
+    public void DisableSwordHitbox()
+    {
+        SwordHitbox hitbox = GetComponentInChildren<SwordHitbox>();
+        if (hitbox != null)
+        {
+            hitbox.DisableHitbox();
+        }
     }
 }

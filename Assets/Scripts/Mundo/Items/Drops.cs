@@ -7,7 +7,7 @@ public class Drops : MonoBehaviour
     
 
     //Comida
-    [SerializeField] GameObject comida;
+    [SerializeField] GameObject food;
     [SerializeField] float healFood;
                      public float HealFood => healFood;
     Animation animacion;

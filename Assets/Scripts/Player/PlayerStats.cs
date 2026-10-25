@@ -4,22 +4,27 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
-    //Vida
+    [Header("Life")]
     [SerializeField] private float life;
                     public float Life => life;
     [SerializeField] private float lifeMax;
     [SerializeField] private UnityEngine.UI.Image vida;
 
-    
-    //Daño
+
+    [Header("Daño")]
     [SerializeField] private int playerDamage;
     public int PlayerDamage => playerDamage;
     //[SerializeField] private LayerMask enemys;
     [SerializeField] private float attackRange;
 
- 
+    [Header("Muerte")]
+    [SerializeField] private GameObject panelMuerte;
+    [SerializeField] private Animator playerAnimator;
+    private bool isDead = false;
 
-    //Exp
+
+
+    [Header("Exp")]
     [SerializeField] float exp;
     [SerializeField] float expMax;
     [SerializeField] private UnityEngine.UI.Image experiencia;
@@ -118,10 +123,30 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        if (isDead) return;
+
         life -= amount;
         vida.fillAmount = (float)life / lifeMax;
+
+        if (life <= 0)
+            Die();
     }
 
+
+    private void Die()
+    {
+        isDead = true;
+        life = 0;
+        vida.fillAmount = 0;
+
+        if (playerAnimator != null)
+            playerAnimator.SetBool("IsDead", true);
+
+        if (panelMuerte != null)
+            panelMuerte.SetActive(true);
+
+        Time.timeScale = 0f;
+    }
 
 
     public void ApplyUpgrade(UpgradeData data)
