@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1890447690596916701}
   - component: {fileID: 8893346964624616121}
   - component: {fileID: 8771094244608169761}
-  - component: {fileID: 2487289275059612897}
   m_Layer: 3
   m_Name: ShopNPC (1)
   m_TagString: Untagged
@@ -128,22 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc91905f20f55f478bf319eb8d61839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopNPC
---- !u!114 &2487289275059612897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208865265773025897}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de5f3925fe59e9f4896697b25529f411, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  interactDistance: 4
-  interactLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1110633216888565607
 GameObject:
   m_ObjectHideFlags: 0
@@ -8090,7 +8073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5f3925fe59e9f4896697b25529f411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  interactDistance: 4
+  detectionRadius: 0
   interactLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -10237,7 +10220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5f3925fe59e9f4896697b25529f411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  interactDistance: 4
+  detectionRadius: 0
   interactLayer:
     serializedVersion: 2
     m_Bits: 8

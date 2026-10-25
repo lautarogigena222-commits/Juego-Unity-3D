@@ -15,5 +15,5 @@ MonoBehaviour:
   upgradeName: Ataque distancai
   description: Genera ataque a distancia
   icon: {fileID: 0}
-  type: 3
+  upgradeType: 3
   value: 0

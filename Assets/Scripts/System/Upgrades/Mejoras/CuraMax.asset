@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CuraMax
   m_EditorClassIdentifier: Assembly-CSharp::MejorasDatos
   upgradeName: Cura Total
-  description: Cura la totalidad de la vida
+  description: Cura total de vida
   icon: {fileID: 0}
-  type: 6
-  value: 0
+  upgradeType: 6
+  value: 100

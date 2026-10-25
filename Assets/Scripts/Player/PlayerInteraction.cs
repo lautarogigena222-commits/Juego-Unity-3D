@@ -4,10 +4,12 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("Interacción")]
-    [SerializeField] private float interactDistance = 4f;
+    [SerializeField] private float detectionRadius;
     [SerializeField] private LayerMask interactLayer;
+    //private bool playerInZone = false;
 
     private PlayerControls controls;
+    private IInteractable currentInteractable;
 
     private void Start()
     {
@@ -18,33 +20,49 @@ public class PlayerInteraction : MonoBehaviour
         controls.Player.Enable();
     }
 
-    private void OnInteract(InputAction.CallbackContext ctx)
+    private void Update()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        DetectInteractable();
+    }
 
-        if (Physics.Raycast(
-            ray,
-            out RaycastHit hit,
-            interactDistance,
-            interactLayer,
-            QueryTriggerInteraction.Collide))
+    private void DetectInteractable()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, interactLayer);
+
+        
+
+        if (hits.Length > 0)
         {
-            IInteractable interactable =
-                hit.collider.GetComponentInParent<IInteractable>();
+         
+
+            IInteractable interactable = hits[0].GetComponentInParent<IInteractable>();
+
+        
+
 
             if (interactable != null)
             {
-                interactable.Interact();
+                currentInteractable = interactable;
+                ShopUI.Instance?.ShowPrompt(true);
+                return;
             }
         }
+
+        currentInteractable = null;
+        ShopUI.Instance?.ShowPrompt(false);
+    }
+
+
+    private void OnInteract(InputAction.CallbackContext ctx)
+    {
+        if (currentInteractable != null)
+            currentInteractable.Interact();
     }
 
     private void OnDisable()
     {
         if (controls != null)
-        {
             controls.Player.Disable();
-        }
     }
 
     private void OnDestroy()
@@ -52,19 +70,20 @@ public class PlayerInteraction : MonoBehaviour
         if (controls != null)
         {
             controls.Player.Interact.performed -= OnInteract;
-
             controls.Dispose();
             controls = null;
         }
     }
 
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-
-        Gizmos.DrawRay(
-            transform.position,
-            transform.forward * interactDistance
-        );
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
+
+    /*public interface IInteractable
+    {
+        void Interact();
+    }*/
 }

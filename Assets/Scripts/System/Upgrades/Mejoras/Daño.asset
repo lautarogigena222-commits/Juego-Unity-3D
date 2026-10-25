@@ -15,5 +15,5 @@ MonoBehaviour:
   upgradeName: "Mejora Da\xF1o"
   description: "Mejora el Da\xF1o"
   icon: {fileID: 0}
-  type: 1
+  upgradeType: 1
   value: 10

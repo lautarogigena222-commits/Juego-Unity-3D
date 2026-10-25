@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: 68cf1b795ba4a69449140c1fdf4e4c8d
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288783
+  packageName: RPG_Animations_Pack_FREE
+  packageVersion: 1.9
+  assetPath: Assets/DoubleL/Model/Unreal_Base.fbx
+  uploadId: 936146
 ModelImporter:
-  serializedVersion: 22200
+  serializedVersion: 24200
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -16,8 +23,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -58,6 +63,9 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -512,8 +520,7 @@ ModelImporter:
     - name: root
       parentName: Unreal_Base(Clone)
       position: {x: -0.0006237887, y: 0.016206745, z: -0.0000000060934298}
-      rotation: {x: -0.00000023841855, y: -0.00000023841844, z: -0.00000023841855,
-        w: 1}
+      rotation: {x: -0.00000023841855, y: -0.00000023841844, z: -0.00000023841855, w: 1}
       scale: {x: 1, y: 1.0000001, z: 1.0000001}
     - name: pelvis
       parentName: root
@@ -828,8 +835,7 @@ ModelImporter:
     - name: upperarm_twist_02_r
       parentName: upperarm_r
       position: {x: 0.18513809, y: 0.00000018119812, z: -0.0000020217894}
-      rotation: {x: -0.000000020489091, y: -0.00000005960463, z: 0.000000033527606,
-        w: 1}
+      rotation: {x: -0.000000020489091, y: -0.00000005960463, z: 0.000000033527606, w: 1}
       scale: {x: 1.0000002, y: 1.0000004, z: 1.0000006}
     - name: thigh_r
       parentName: pelvis
@@ -944,8 +950,7 @@ ModelImporter:
     - name: ik_hand_r
       parentName: ik_hand_gun
       position: {x: -0.02349716, y: -0.22796676, z: 0.0038748644}
-      rotation: {x: 0.000000059604638, y: 0.00000003026798, z: -0.000000066123896,
-        w: 1}
+      rotation: {x: 0.000000059604638, y: 0.00000003026798, z: -0.000000066123896, w: 1}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: interaction
       parentName: root
@@ -981,10 +986,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 288783
-  packageName: RPG_Animations_Pack_FREE
-  packageVersion: 1.9
-  assetPath: Assets/DoubleL/Model/Unreal_Base.fbx
-  uploadId: 936146

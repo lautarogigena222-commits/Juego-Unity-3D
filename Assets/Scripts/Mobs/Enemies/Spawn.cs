@@ -20,7 +20,7 @@ public class Spawn: MonoBehaviour
     
     [Header("Zona de detección")]
     [SerializeField] private float detectionRadius = 15f;
-    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private LayerMask interactLayer;
 
     
     [Header("Enemigos")]
@@ -107,7 +107,7 @@ public class Spawn: MonoBehaviour
 
     private void DetectPlayer()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, playerLayer);
+        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, interactLayer);
 
         playerInZone = hits.Length > 0;
     }
