@@ -4,6 +4,8 @@ using StarterAssets;
 public class TeleportPortal : MonoBehaviour
 {
     [Header("Configuración")]
+        [Header("Sonido")]
+    [SerializeField] private AudioSource teleportAudio;
     [SerializeField] private Transform destination;
     [SerializeField] private Transform playerSpawnDirection;
 
@@ -20,12 +22,15 @@ public class TeleportPortal : MonoBehaviour
 
 
     private void Teleport(GameObject player)
+
     {
         if (teleporting || destination == null) return;
         teleporting = true;
 
         CharacterController cc = player.GetComponent<CharacterController>();
         if (cc == null) { teleporting = false; return; }
+        if (teleportAudio != null)
+            teleportAudio.Play();
 
         cc.enabled = false;
         player.transform.position = destination.position;
