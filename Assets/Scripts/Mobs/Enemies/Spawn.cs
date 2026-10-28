@@ -2,14 +2,8 @@ using UnityEngine;
 
 public class Spawn: MonoBehaviour
 {
-    [Header("Enemy prefab")]
-    /*[SerializeField] private GameObject enemyBosque;
-    [SerializeField] private GameObject enemyNieve;
-    [SerializeField] private GameObject enemyDesierto;
-    [SerializeField] private GameObject enemyPlaya;
-    [SerializeField] private GameObject enemyCueva;*/
-
-    private GameObject enemySelected;
+    [Header("Enemy")]
+    [SerializeField] private GameObject enemy;
 
     [Header("Spawn")]
     [SerializeField] private float timeBetweenSpawn = 3f;
@@ -26,8 +20,6 @@ public class Spawn: MonoBehaviour
     [Header("Enemigos")]
     [SerializeField] private int enemyNumber;
     [SerializeField] private int maxEnemies;
-
-    [SerializeField] private GameObject enemy;
     [SerializeField] private bool spawnEnemies = false;
 
     
@@ -36,12 +28,6 @@ public class Spawn: MonoBehaviour
     [SerializeField] private int animalNumber;
     [SerializeField] private int maxAnimals;
     [SerializeField] private bool spawnAnimals = false;
-
-    private void Start()
-    {
-        // el spawner larga el enemigo mas cercano al player
-        //AssignEnemy();
-    }
 
     void Update()
     {
@@ -56,55 +42,6 @@ public class Spawn: MonoBehaviour
             SpawnAnimal();
     }
 
-    /*private void AssignEnemy()
-    {
-        Transform current = transform;
-        bool assigned = false;
-
-        while (current != null)
-        {
-            string nameLower = current.name.ToLower();
-
-            if (nameLower.Contains("bosque") || nameLower.Contains("forest"))
-            {
-                enemySelected = enemy;
-                assigned = true;
-                break;
-            }
-            /*else if (nameLower.Contains("nieve") || nameLower.Contains("snow"))
-            {
-                enemySelected = enemyNieve;
-                assigned = true;
-                break;
-            }
-            else if (nameLower.Contains("desierto") || nameLower.Contains("desert"))
-            {
-                enemySelected = enemyDesierto;
-                assigned = true;
-                break;
-            }
-            else if (nameLower.Contains("playa") || nameLower.Contains("beach"))
-            {
-                enemySelected = enemyPlaya;
-                assigned = true;
-                break;
-            }
-            else if (nameLower.Contains("cueva") || nameLower.Contains("cave"))
-            {
-                enemySelected = enemyCueva;
-                assigned = true;
-                break;
-            }
-
-            current = current.parent;
-        }
-
-        if (!assigned)
-        {
-            enemySelected = enemyBosque;
-        }
-    }*/
-
     private void DetectPlayer()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, interactLayer);
@@ -114,16 +51,14 @@ public class Spawn: MonoBehaviour
 
     private void SpawnEnemy()
     {
-        /*if (enemySelected == null)
-        {
-            Debug.LogWarning("El spawner " + gameObject.name + " no tiene asignado el prefab del enemigo para este bioma.", gameObject);
-            return;
-        }*/
-
         spawnTimeEnemy += Time.deltaTime;
         if (spawnTimeEnemy < timeBetweenSpawn) return;
 
-
+        if (enemy == null)
+        {
+            Debug.LogWarning("El spawner " + gameObject.name + " no tiene asignado ningún prefab de enemigo.", gameObject);
+            return;
+        }
 
         GameObject spawnedEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
 

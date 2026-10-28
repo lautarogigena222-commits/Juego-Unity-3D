@@ -29657,6 +29657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 4787734284849576031, guid: c7e4f2bff11960e4e818fdc3f39d7ec2, type: 3}
   timeBetweenSpawn: 5
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -29665,7 +29666,6 @@ MonoBehaviour:
     m_Bits: 0
   enemyNumber: 0
   maxEnemies: 10
-  enemy: {fileID: 4787734284849576031, guid: c7e4f2bff11960e4e818fdc3f39d7ec2, type: 3}
   spawnEnemies: 1
   animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
   animalNumber: 0
@@ -33767,15 +33767,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
   timeBetweenSpawn: 3
   spawnTimeAnimal: 0
   detectionRadius: 90
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyNumber: 0
   maxEnemies: 50
-  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
   spawnEnemies: 1
   animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
   animalNumber: 0
@@ -56366,6 +56366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 4787734284849576031, guid: c7e4f2bff11960e4e818fdc3f39d7ec2, type: 3}
   timeBetweenSpawn: 5
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -56374,7 +56375,6 @@ MonoBehaviour:
     m_Bits: 0
   enemyNumber: 0
   maxEnemies: 10
-  enemy: {fileID: 4787734284849576031, guid: c7e4f2bff11960e4e818fdc3f39d7ec2, type: 3}
   spawnEnemies: 1
   animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
   animalNumber: 0
@@ -73797,15 +73797,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
   timeBetweenSpawn: 3
   spawnTimeAnimal: 0
   detectionRadius: 90
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyNumber: 0
   maxEnemies: 50
-  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
   spawnEnemies: 1
   animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
   animalNumber: 0
@@ -78605,6 +78605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 4641162599894494825, guid: c18328623d6499747875b0bab9e99ab1, type: 3}
   timeBetweenSpawn: 10
   spawnTimeAnimal: 0
   detectionRadius: 80
@@ -78613,7 +78614,6 @@ MonoBehaviour:
     m_Bits: 0
   enemyNumber: 0
   maxEnemies: 0
-  enemy: {fileID: 4641162599894494825, guid: c18328623d6499747875b0bab9e99ab1, type: 3}
   spawnEnemies: 0
   animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
   animalNumber: 0
@@ -80259,15 +80259,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
   timeBetweenSpawn: 3
   spawnTimeAnimal: 0
   detectionRadius: 90
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyNumber: 0
   maxEnemies: 50
-  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
   spawnEnemies: 1
   animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
   animalNumber: 0
@@ -110227,6 +110227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 4787734284849576031, guid: c7e4f2bff11960e4e818fdc3f39d7ec2, type: 3}
   timeBetweenSpawn: 5
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -110235,7 +110236,6 @@ MonoBehaviour:
     m_Bits: 0
   enemyNumber: 0
   maxEnemies: 10
-  enemy: {fileID: 4787734284849576031, guid: c7e4f2bff11960e4e818fdc3f39d7ec2, type: 3}
   spawnEnemies: 1
   animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
   animalNumber: 0
@@ -141657,6 +141657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 4787734284849576031, guid: c7e4f2bff11960e4e818fdc3f39d7ec2, type: 3}
   timeBetweenSpawn: 5
   spawnTimeAnimal: 0
   detectionRadius: 90
@@ -141665,7 +141666,6 @@ MonoBehaviour:
     m_Bits: 0
   enemyNumber: 0
   maxEnemies: 10
-  enemy: {fileID: 4787734284849576031, guid: c7e4f2bff11960e4e818fdc3f39d7ec2, type: 3}
   spawnEnemies: 1
   animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
   animalNumber: 0
@@ -145022,15 +145022,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
   timeBetweenSpawn: 3
   spawnTimeAnimal: 0
   detectionRadius: 90
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyNumber: 0
   maxEnemies: 50
-  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
   spawnEnemies: 1
   animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
   animalNumber: 0
