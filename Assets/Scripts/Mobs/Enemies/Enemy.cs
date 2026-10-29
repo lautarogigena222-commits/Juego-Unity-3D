@@ -46,25 +46,25 @@ public class Enemy : MonoBehaviour
     {
         //Comportamiento_Enemy();
 
+        if (target == null) return;
+
         float distance = Vector3.Distance(transform.position, target.transform.position);
         if (distance < detectionRange)
         {
             Vector3 direction = target.transform.position - transform.position;
             direction.y = 0f;
 
-            //if (direction.sqrMagnitude > 0.001f)
-            
-               
+            // Verificación de seguridad para evitar vectores en cero
+            if (direction != Vector3.zero && direction.sqrMagnitude > 0.001f)
+            {
                 Quaternion lookRotation = Quaternion.LookRotation(direction.normalized);
                 transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 10f * Time.deltaTime);
-            
+            }
 
             Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-           
-
         }
+
     }
 
     private void OnTriggerEnter(Collider other)

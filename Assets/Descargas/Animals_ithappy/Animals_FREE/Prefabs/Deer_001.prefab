@@ -1031,9 +1031,10 @@ GameObject:
   - component: {fileID: 7922649801668778610}
   - component: {fileID: 7922649801668778611}
   - component: {fileID: 5756712953980877067}
+  - component: {fileID: 3229598042212342164}
   m_Layer: 0
   m_Name: Deer_001
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1143,9 +1144,30 @@ MonoBehaviour:
   tiempoDescansoMax: 3
   m_VerticalID: Vert
   m_StateID: State
-  comida: {fileID: 0}
+  comida: {fileID: 4340528498384639923, guid: fe28294105514c54da704fda9c021933, type: 3}
   drop: 0
   animalLife: 10
+--- !u!65 &3229598042212342164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7402009758359158996}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 1.77, z: 1}
+  m_Center: {x: -0.04, y: 1.06, z: 0}
 --- !u!1 &7500468941402322376
 GameObject:
   m_ObjectHideFlags: 0

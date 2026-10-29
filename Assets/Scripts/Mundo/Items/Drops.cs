@@ -2,33 +2,33 @@ using UnityEngine;
 
 public class Drops : MonoBehaviour
 {
-    //Monedas
+    [Header("Monedas")]
     [SerializeField] GameObject coins;
-    
 
-    //Comida
+    [Header("Comida y Curación")]
     [SerializeField] GameObject food;
-    [SerializeField] float healFood;
-                     public float HealFood => healFood;
-    Animation animacion;
+    [SerializeField] private float healFood = 3f;
+    public float HealFood => healFood;
+
     [SerializeField] int cantidadDrop;
+    private Animation animacion;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        animacion = GetComponent<Animation>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            PlayerStats playerStats = other.GetComponent<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.Curar(healFood);
+            }
+
             Destroy(gameObject);
         }
-       
     }
 }

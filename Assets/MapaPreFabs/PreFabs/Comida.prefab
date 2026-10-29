@@ -8696,7 +8696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drops
   coins: {fileID: 869485794138678735, guid: 384c41e16ca34b544b4611f83a4063a7, type: 3}
-  comida: {fileID: 4340528498384639923}
+  food: {fileID: 0}
   healFood: 3
   cantidadDrop: 0
 --- !u!136 &7264355266225169055

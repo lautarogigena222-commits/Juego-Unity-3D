@@ -3361,9 +3361,10 @@ GameObject:
   - component: {fileID: 4803590418286029817}
   - component: {fileID: 7959904604024539813}
   - component: {fileID: 5550304346328207467}
+  - component: {fileID: 6608067347623835631}
   m_Layer: 0
   m_Name: SK_Sheep_dark
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3470,9 +3471,30 @@ MonoBehaviour:
   tiempoDescansoMax: 5
   m_VerticalID: Vert
   m_StateID: State
-  comida: {fileID: 0}
+  comida: {fileID: 4340528498384639923, guid: fe28294105514c54da704fda9c021933, type: 3}
   drop: 0
   animalLife: 10
+--- !u!65 &6608067347623835631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803590418286029818}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.43, y: 1.14, z: 1.38}
+  m_Center: {x: 0, y: 0.54, z: 0.21}
 --- !u!1 &4803590418325253606
 GameObject:
   m_ObjectHideFlags: 0

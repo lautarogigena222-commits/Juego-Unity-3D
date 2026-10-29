@@ -132,6 +132,22 @@ public class PlayerStats : MonoBehaviour
             Die();
     }
 
+    public void Curar(float amount)
+    {
+        if (isDead) return;
+
+        life += amount;
+        if (life > lifeMax)
+        {
+            life = lifeMax;
+        }
+
+        if (vida != null)
+        {
+            vida.fillAmount = (float)life / lifeMax;
+        }
+    }
+
 
     private void Die()
     {
