@@ -29667,7 +29667,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 10
   spawnEnemies: 1
-  animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 0
   spawnAnimals: 0
@@ -33777,7 +33777,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 50
   spawnEnemies: 1
-  animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 0
   spawnAnimals: 0
@@ -48985,6 +48985,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 941efb0f211d3874090faba35d37657f, type: 3}
+--- !u!1 &957200931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 957200932}
+  - component: {fileID: 957200933}
+  m_Layer: 0
+  m_Name: Spawn_Animal_Forest 3
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &957200932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957200931}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -96.6, y: 0, z: -99.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178843587}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &957200933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957200931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
+  timeBetweenSpawn: 3
+  spawnTimeAnimal: 0
+  detectionRadius: 90
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  enemyNumber: 0
+  maxEnemies: 50
+  spawnEnemies: 0
+  animalsList:
+  - {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  - {fileID: 7402009758359158996, guid: 4ecab060b0afb5d4db61f7f1311b9e24, type: 3}
+  - {fileID: 6517686061769116559, guid: f32fc89859f16ec49bc857008a5ed9c5, type: 3}
+  - {fileID: 4803590418286029818, guid: 89340c34cb7cd124883d3f31b9835bfd, type: 3}
+  animalNumber: 0
+  maxAnimals: 10
+  spawnAnimals: 1
 --- !u!43 &958916367
 Mesh:
   m_ObjectHideFlags: 0
@@ -56376,7 +56438,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 10
   spawnEnemies: 1
-  animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 0
   spawnAnimals: 0
@@ -60779,6 +60841,10 @@ Transform:
   - {fileID: 1277107364}
   - {fileID: 2138672101}
   - {fileID: 1386703565}
+  - {fileID: 1205768744}
+  - {fileID: 1805302901}
+  - {fileID: 957200932}
+  - {fileID: 1284612183}
   m_Father: {fileID: 1705844115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1179338186
@@ -61920,6 +61986,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 941efb0f211d3874090faba35d37657f, type: 3}
   m_PrefabInstance: {fileID: 115161774}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1205768743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1205768744}
+  - component: {fileID: 1205768745}
+  m_Layer: 0
+  m_Name: Spawn_Animal_Forest 1
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1205768744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205768743}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 72.6, y: -1.271, z: 79.899994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178843587}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205768745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205768743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
+  timeBetweenSpawn: 3
+  spawnTimeAnimal: 0
+  detectionRadius: 90
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  enemyNumber: 0
+  maxEnemies: 50
+  spawnEnemies: 0
+  animalsList:
+  - {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  - {fileID: 7402009758359158996, guid: 4ecab060b0afb5d4db61f7f1311b9e24, type: 3}
+  - {fileID: 6517686061769116559, guid: f32fc89859f16ec49bc857008a5ed9c5, type: 3}
+  - {fileID: 4803590418286029818, guid: 89340c34cb7cd124883d3f31b9835bfd, type: 3}
+  animalNumber: 0
+  maxAnimals: 10
+  spawnAnimals: 1
 --- !u!1001 &1206917843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73807,7 +73935,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 50
   spawnEnemies: 1
-  animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 0
   spawnAnimals: 0
@@ -73992,6 +74120,68 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 941efb0f211d3874090faba35d37657f, type: 3}
+--- !u!1 &1284612182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1284612183}
+  - component: {fileID: 1284612184}
+  m_Layer: 0
+  m_Name: Spawn_Animal_Forest 4
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1284612183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284612182}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 74.4, y: 0, z: -99.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178843587}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1284612184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284612182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
+  timeBetweenSpawn: 3
+  spawnTimeAnimal: 0
+  detectionRadius: 90
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  enemyNumber: 0
+  maxEnemies: 50
+  spawnEnemies: 0
+  animalsList:
+  - {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  - {fileID: 7402009758359158996, guid: 4ecab060b0afb5d4db61f7f1311b9e24, type: 3}
+  - {fileID: 6517686061769116559, guid: f32fc89859f16ec49bc857008a5ed9c5, type: 3}
+  - {fileID: 4803590418286029818, guid: 89340c34cb7cd124883d3f31b9835bfd, type: 3}
+  animalNumber: 0
+  maxAnimals: 5
+  spawnAnimals: 1
 --- !u!1001 &1286419745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78615,7 +78805,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 0
   spawnEnemies: 0
-  animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 10
   spawnAnimals: 1
@@ -80269,7 +80459,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 50
   spawnEnemies: 1
-  animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 0
   spawnAnimals: 0
@@ -110188,6 +110378,68 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1805302900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805302901}
+  - component: {fileID: 1805302902}
+  m_Layer: 0
+  m_Name: Spawn_Animal_Forest 2
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805302901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805302900}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -106.9, y: 0, z: 79.899994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178843587}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1805302902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805302900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bf17faf0602fa439125134a35a0a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawn
+  enemy: {fileID: 3679055691871304326, guid: d7ddb0c9afcebef47a2d3e47e32e8bae, type: 3}
+  timeBetweenSpawn: 3
+  spawnTimeAnimal: 0
+  detectionRadius: 90
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  enemyNumber: 0
+  maxEnemies: 50
+  spawnEnemies: 0
+  animalsList:
+  - {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  - {fileID: 7402009758359158996, guid: 4ecab060b0afb5d4db61f7f1311b9e24, type: 3}
+  - {fileID: 6517686061769116559, guid: f32fc89859f16ec49bc857008a5ed9c5, type: 3}
+  - {fileID: 4803590418286029818, guid: 89340c34cb7cd124883d3f31b9835bfd, type: 3}
+  animalNumber: 0
+  maxAnimals: 10
+  spawnAnimals: 1
 --- !u!4 &1805394276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 941efb0f211d3874090faba35d37657f, type: 3}
@@ -110237,7 +110489,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 10
   spawnEnemies: 1
-  animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 0
   spawnAnimals: 0
@@ -141667,7 +141919,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 10
   spawnEnemies: 1
-  animal: {fileID: 2001460331493112913, guid: 3bddc375107a0504aa87a2b2fb8cdb3c, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 0
   spawnAnimals: 0
@@ -145032,7 +145284,7 @@ MonoBehaviour:
   enemyNumber: 0
   maxEnemies: 50
   spawnEnemies: 1
-  animal: {fileID: 8073443194988779917, guid: 6b0b0b098177a3b439c80991ec9deacc, type: 3}
+  animalsList: []
   animalNumber: 0
   maxAnimals: 0
   spawnAnimals: 0

@@ -10,10 +10,11 @@ namespace ithappy.Animals_FREE
     public class Animal : MonoBehaviour
     {
         [Header("Movimiento")]
-        [SerializeField] private float walkSpeed = 1.5f;
-        [SerializeField] private float tiempoMovimiento = 3f;
+        [SerializeField] private float walkSpeed = 0.6f;
         [SerializeField] private float tiempoDescansoMin = 1f;
         [SerializeField] private float tiempoDescansoMax = 3f;
+
+        private float movingTime;
 
         [Header("Animator")]
         [SerializeField] private string m_VerticalID = "Vert";
@@ -43,7 +44,6 @@ namespace ithappy.Animals_FREE
         {
             Comportamiento();
             AplicarGravedad();
-            DropComida();
         }
 
        /* private void OnTriggerEnter(Collider other)
@@ -64,8 +64,8 @@ namespace ithappy.Animals_FREE
             animalLife -= amount;
             if(animalLife <= 0)
             {
-                Destroy(gameObject);
                 DropComida();
+                Destroy(gameObject);
             }
         }
 
@@ -113,14 +113,15 @@ namespace ithappy.Animals_FREE
                     transform.rotation = Quaternion.Slerp(
                         transform.rotation,
                         Quaternion.LookRotation(direccion),
-                        10f * Time.deltaTime
+                        5f * Time.deltaTime // Un giro más suave y natural
                     );
                 }
 
                 animator.SetFloat(m_VerticalID, 1f);
                 animator.SetFloat(m_StateID, 0f);
 
-                if (cronometro >= tiempoMovimiento)
+                // Cuando cumple su tiempo de caminata aleatorio, pasa a descansar
+                if (cronometro >= movingTime)
                 {
                     descansando = true;
                     cronometro = 0f;
@@ -139,6 +140,8 @@ namespace ithappy.Animals_FREE
         {
             float angulo = Random.Range(0f, 360f) * Mathf.Deg2Rad;
             direccion = new Vector3(Mathf.Sin(angulo), 0f, Mathf.Cos(angulo)).normalized;
+
+            movingTime = Random.Range(4f, 12f);
         }
     }
 }

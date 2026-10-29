@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawn: MonoBehaviour
@@ -24,7 +25,7 @@ public class Spawn: MonoBehaviour
 
     
     [Header("Animales")]
-    [SerializeField] private GameObject animal;
+    [SerializeField] private List<GameObject> animalsList;
     [SerializeField] private int animalNumber;
     [SerializeField] private int maxAnimals;
     [SerializeField] private bool spawnAnimals = false;
@@ -76,7 +77,37 @@ public class Spawn: MonoBehaviour
         spawnTimeAnimal += Time.deltaTime;
         if (spawnTimeAnimal < timeBetweenSpawn) return;
 
-        Instantiate(animal, transform.position, Quaternion.identity);
+        if (animalsList == null || animalsList.Count == 0)
+        {
+            Debug.LogWarning("El spawner " + gameObject.name + " no tiene animales asignados en la lista.", gameObject);
+            return;
+        }
+
+        float radioDispersion = 20f;
+
+        float randomX = transform.position.x + Random.Range(-radioDispersion, radioDispersion);
+        float randomZ = transform.position.z + Random.Range(-radioDispersion, radioDispersion);
+        float startY = transform.position.y + 50f;
+        Vector3 posicionSpawn = new Vector3(randomX, startY, randomZ);
+
+        RaycastHit hit;
+        if (Physics.Raycast(posicionSpawn, Vector3.down, out hit, 100f))
+        {
+            posicionSpawn = hit.point;
+        }
+        else
+        {
+            posicionSpawn.y = transform.position.y;
+        }
+
+        int randomIndex = Random.Range(0, animalsList.Count);
+        GameObject animalToSpawn = animalsList[randomIndex];
+
+        if (animalToSpawn != null)
+        {
+            GameObject newAnimal = Instantiate(animalToSpawn, posicionSpawn, transform.rotation);
+        }
+
         spawnTimeAnimal = 0;
         animalNumber++;
     }
