@@ -142,6 +142,8 @@ namespace StarterAssets
             _fallTimeoutDelta = FallTimeout;
 
             _playerSoundController = GetComponent<PlayerSoundController>();
+       
+            
         }
 
         private void Update()
@@ -246,6 +248,7 @@ namespace StarterAssets
 
         private void JumpAndGravity()
         {
+            
             if (Grounded)
             {
                 _fallTimeoutDelta = FallTimeout;
@@ -260,7 +263,6 @@ namespace StarterAssets
                 {
                     _verticalVelocity = -2f;
                 }
-
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
@@ -272,8 +274,10 @@ namespace StarterAssets
 
                     if (_playerSoundController != null)
                     {
+                        
                         _playerSoundController.playSaltar();
                     }
+                    
                 }
 
                 if (_jumpTimeoutDelta >= 0.0f)
