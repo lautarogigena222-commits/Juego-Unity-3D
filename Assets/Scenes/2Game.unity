@@ -3947,7 +3947,8 @@ Transform:
   m_LocalPosition: {x: -72.73943, y: 65.7, z: 59.92547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1727116543}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &104218694
@@ -9576,15 +9577,15 @@ MonoBehaviour:
   detectionRadius: 90
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyNumber: 0
   maxEnemies: 10
   spawnEnemies: 0
   animalsList:
-  - {fileID: 0}
-  animalNumber: 0
-  maxAnimals: 0
-  spawnAnimals: 0
+  - {fileID: 3215953739052556687, guid: e4288e7554b41194b919194e99696474, type: 3}
+  animalNumber: 1
+  maxAnimals: 5
+  spawnAnimals: 1
 --- !u!4 &252521339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 941efb0f211d3874090faba35d37657f, type: 3}
@@ -11413,14 +11414,15 @@ MonoBehaviour:
   detectionRadius: 90
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyNumber: 0
   maxEnemies: 10
   spawnEnemies: 0
-  animalsList: []
-  animalNumber: 0
-  maxAnimals: 0
-  spawnAnimals: 0
+  animalsList:
+  - {fileID: 3215953739052556687, guid: e4288e7554b41194b919194e99696474, type: 3}
+  animalNumber: 1
+  maxAnimals: 5
+  spawnAnimals: 1
 --- !u!1001 &323627498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17794,14 +17796,15 @@ MonoBehaviour:
   detectionRadius: 90
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyNumber: 0
   maxEnemies: 10
   spawnEnemies: 0
-  animalsList: []
-  animalNumber: 0
-  maxAnimals: 0
-  spawnAnimals: 0
+  animalsList:
+  - {fileID: 3215953739052556687, guid: e4288e7554b41194b919194e99696474, type: 3}
+  animalNumber: 1
+  maxAnimals: 5
+  spawnAnimals: 1
 --- !u!4 &475006165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 097d934566947854b838f51016a9462b, type: 3}
@@ -22121,14 +22124,15 @@ MonoBehaviour:
   detectionRadius: 90
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   enemyNumber: 0
   maxEnemies: 10
   spawnEnemies: 0
-  animalsList: []
-  animalNumber: 0
-  maxAnimals: 0
-  spawnAnimals: 0
+  animalsList:
+  - {fileID: 3215953739052556687, guid: e4288e7554b41194b919194e99696474, type: 3}
+  animalNumber: 1
+  maxAnimals: 5
+  spawnAnimals: 1
 --- !u!1001 &606053070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108289,6 +108293,68 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 941efb0f211d3874090faba35d37657f, type: 3}
   m_PrefabInstance: {fileID: 356126160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1727116542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 102642656}
+    m_Modifications:
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 374.0268
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -59.552628
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -193.06036
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215953739052556687, guid: e4288e7554b41194b919194e99696474, type: 3}
+      propertyPath: m_Name
+      value: Camel_Prefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4288e7554b41194b919194e99696474, type: 3}
+--- !u!4 &1727116543 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2876265585591810869, guid: e4288e7554b41194b919194e99696474, type: 3}
+  m_PrefabInstance: {fileID: 1727116542}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1727723286
 PrefabInstance:
