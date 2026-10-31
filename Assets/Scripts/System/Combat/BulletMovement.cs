@@ -49,7 +49,7 @@ public class BulletMovement : MonoBehaviour
 
         if (other.CompareTag("Boss"))
         {
-            AnubisMovement boss = other.GetComponent<AnubisMovement>();
+            BossMovement boss = other.GetComponent<BossMovement>();
             if (boss != null)
             {
                 boss.TakeDamage(damage);

@@ -48,6 +48,7 @@ public class Spawn: MonoBehaviour
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, interactLayer);
 
         playerInZone = hits.Length > 0;
+       
     }
 
     private void SpawnEnemy()

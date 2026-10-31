@@ -19,7 +19,7 @@ public class Invoke : MonoBehaviour
         PausarSpawners();
         DestruirEnemigos();
 
-        Instantiate(boss, transform.position + Vector3.up * 2f, Quaternion.identity);
+        Instantiate(boss, transform.position + Vector3.back * 5f + Vector3.up * 2f, Quaternion.identity);
 
         if (bossHealthPanel != null)
             bossHealthPanel.SetActive(true);

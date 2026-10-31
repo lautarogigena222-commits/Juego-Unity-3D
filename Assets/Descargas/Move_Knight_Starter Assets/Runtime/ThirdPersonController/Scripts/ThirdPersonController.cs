@@ -317,6 +317,11 @@ namespace StarterAssets
             return Mathf.Clamp(lfAngle, lfMin, lfMax);
         }
 
+        public void IncreaseSpeed(float amount)
+        {
+            MoveSpeed += amount;
+            SprintSpeed += amount;
+        }
         private void OnDrawGizmosSelected()
         {
             Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);

@@ -72,7 +72,7 @@ public class AutoShooter : MonoBehaviour
         hasAutoShoot = true;
     }
 
-    /*public void IncreaseDamage(float amount)
+    public void IncreaseDamage(float amount)
     {
         damage += amount;
     }
@@ -80,5 +80,5 @@ public class AutoShooter : MonoBehaviour
     public void IncreaseFireRate(float amount)
     {
         timeBetweenShots = Mathf.Max(0.1f, timeBetweenShots - amount);
-    }*/
+    }
 }

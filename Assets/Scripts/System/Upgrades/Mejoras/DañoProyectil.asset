@@ -16,4 +16,4 @@ MonoBehaviour:
   description: "Aumentar Da\xF1o De Proyectil"
   icon: {fileID: 0}
   upgradeType: 4
-  value: 0
+  value: 10

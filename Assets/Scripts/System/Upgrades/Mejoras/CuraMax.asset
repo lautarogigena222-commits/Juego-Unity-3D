@@ -16,4 +16,4 @@ MonoBehaviour:
   description: Cura total de vida
   icon: {fileID: 0}
   upgradeType: 6
-  value: 100
+  value: 500

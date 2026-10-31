@@ -55,16 +55,4 @@ public class UpgradeChest : MonoBehaviour
             OpenChest();
         }
     }
-
-
-
-
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-
-    }*/
 }

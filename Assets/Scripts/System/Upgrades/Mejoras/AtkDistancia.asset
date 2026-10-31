@@ -16,4 +16,4 @@ MonoBehaviour:
   description: Genera ataque a distancia
   icon: {fileID: 0}
   upgradeType: 3
-  value: 0
+  value: 10

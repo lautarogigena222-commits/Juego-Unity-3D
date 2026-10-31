@@ -124,7 +124,7 @@ public class Enemy : MonoBehaviour
                 case 0:
                     break;
                 case 1:
-                    Instantiate(moneda, transform.position, transform.rotation);
+                    Instantiate(moneda, transform.position + Vector3.up * 1, transform.rotation);
                     break;
                 case 2:
                     break;

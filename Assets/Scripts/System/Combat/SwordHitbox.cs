@@ -37,5 +37,11 @@ public class SwordHitbox : MonoBehaviour
             if (animal != null)
                 animal.TakeDamage(playerStats.PlayerDamage);
         }
+        if (other.CompareTag("Boss"))
+        {
+            BossMovement boss = other.GetComponentInParent<BossMovement>();
+            if (boss != null)
+                boss.TakeDamage(playerStats.PlayerDamage);
+        }
     }
 }

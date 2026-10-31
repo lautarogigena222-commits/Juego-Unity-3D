@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using StarterAssets;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -34,13 +35,22 @@ public class PlayerStats : MonoBehaviour
 
     //Mejora
     [SerializeField] private AutoShooter autoShooter;
+    [SerializeField] private ThirdPersonController ThirdPersonController;
 
     //Escenas
-    [SerializeField] private Escena sceneController;
+    private Escena sceneController;
 
 
 
 
+    void Awake()
+    {
+        if (autoShooter == null)
+            autoShooter = GetComponent<AutoShooter>();
+
+        if (ThirdPersonController == null)
+            ThirdPersonController = GetComponent<ThirdPersonController>();
+    }
 
     void Start()
     {
@@ -57,12 +67,6 @@ public class PlayerStats : MonoBehaviour
             expMax += 10;
         }
         nivelTexto.text = "NIVEL: " + nivel.ToString();
-       /* if(life <= 0)
-        {
-            DefeatScene();
-
-        }*/
-
     }
 
 
@@ -79,11 +83,7 @@ public class PlayerStats : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        /* if (life <= 0)
-         {
-             DefeatScene();
 
-         }*/
 
     }
 
@@ -101,17 +101,13 @@ public class PlayerStats : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Boss"))
         {
-                life -= other.gameObject.GetComponent<AnubisMovement>().Damge;
-                exp += other.gameObject.GetComponent<AnubisMovement>().ExpBoss;
+                life -= other.gameObject.GetComponent<BossMovement>().Damge;
+                exp += other.gameObject.GetComponent<BossMovement>().ExpBoss;
             
             vida.fillAmount = (float)life / lifeMax;
             experiencia.fillAmount = (float)exp / expMax;
         }
-       /* if (life <= 0)
-        {
-            DefeatScene();
 
-        }*/
     }
 
     public void MasExp(float amount)
@@ -172,7 +168,7 @@ public class PlayerStats : MonoBehaviour
             case UpgradeData.UpgradeType.IncreaseHealth:
                 lifeMax += data.value;
                 life += data.value;
-                vida.fillAmount = (float)life / lifeMax;
+                vida.fillAmount = life / lifeMax;
                 break;
 
             case UpgradeData.UpgradeType.IncreaseDamage:
@@ -181,48 +177,28 @@ public class PlayerStats : MonoBehaviour
 
             case UpgradeData.UpgradeType.InstantHeal:
                 life = Mathf.Min(life + data.value, lifeMax);
-                vida.fillAmount = (float)life / lifeMax;
+                vida.fillAmount = life / lifeMax;
                 break;
+
             case UpgradeData.UpgradeType.AutoShoot:
                 if (autoShooter != null)
-                {
                     autoShooter.EnableAutoShoot();
-                }
                 break;
-                /*
-                case UpgradeData.UpgradeType.IncreaseProjectileDamage:
-                    if (autoShooter != null)
-                    {
-                        autoShooter.IncreaseDamage(data.value);
-                    }
-                    break;
 
-                case UpgradeData.UpgradeType.IncreaseFireRate:
-                    if (autoShooter != null)
-                    {
-                        autoShooter.IncreaseFireRate(data.value);
-                    }
-                    break;
+            case UpgradeData.UpgradeType.IncreaseProjectileDamage:
+                if (autoShooter != null)
+                    autoShooter.IncreaseDamage(data.value);
+                break;
 
-                case UpgradeData.UpgradeType.IncreaseSpeed:
-                    if (playerController != null)
-                    {
-                        playerController.IncreaseSpeed(data.value);
-                    }
-                    break;
-                */
+            case UpgradeData.UpgradeType.IncreaseFireRate:
+                if (autoShooter != null)
+                    autoShooter.IncreaseFireRate(data.value);
+                break;
 
+            case UpgradeData.UpgradeType.IncreaseSpeed:
+                if (ThirdPersonController != null)
+                    ThirdPersonController.IncreaseSpeed(data.value);
+                break;
         }
-
-        
     }
-
-    /*public void DefeatScene()
-    {
-        if (life <= 0)
-        {
-            sceneController.ChangeScene("Lose");
-        }
-    }*/
-
 }
