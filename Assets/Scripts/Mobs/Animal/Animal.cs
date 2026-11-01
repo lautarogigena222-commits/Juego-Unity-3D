@@ -28,6 +28,7 @@ namespace ithappy.Animals_FREE
         private CharacterController controller;
         private Animator animator;
 
+
         private float cronometro;
         private float tiempoDescanso;
         private bool descansando;
@@ -35,8 +36,8 @@ namespace ithappy.Animals_FREE
 
         private void Awake()
         {
-            controller = GetComponent<CharacterController>();
             animator = GetComponent<Animator>();
+            controller = GetComponent<CharacterController>();
             ElegirNuevaDireccion();
         }
 
@@ -79,7 +80,7 @@ namespace ithappy.Animals_FREE
                     case 0:
                         break;
                     case 1:
-                        Instantiate(comida, transform.position, transform.rotation);
+                        Instantiate(comida, transform.position + Vector3.up * 1, transform.rotation);
                         break;
                     case 2:
                         break;
@@ -121,7 +122,7 @@ namespace ithappy.Animals_FREE
                 animator.SetFloat(m_StateID, 0f);
 
                 // Cuando cumple su tiempo de caminata aleatorio, pasa a descansar
-                if (cronometro >= movingTime)
+               if (cronometro >= movingTime)
                 {
                     descansando = true;
                     cronometro = 0f;

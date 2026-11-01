@@ -106,7 +106,7 @@ public class Spawn: MonoBehaviour
 
         if (animalToSpawn != null)
         {
-            GameObject newAnimal = Instantiate(animalToSpawn, posicionSpawn, transform.rotation);
+            GameObject newAnimal = Instantiate(animalToSpawn, posicionSpawn + Vector3.up * 1, transform.rotation);
         }
 
         spawnTimeAnimal = 0;
