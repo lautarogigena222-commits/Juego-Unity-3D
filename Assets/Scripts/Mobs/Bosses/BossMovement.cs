@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BossMovement : MonoBehaviour
 {
-    [Header ("Life")]
+    [Header("Life")]
     [SerializeField] float currentHealth;
     [SerializeField] float maxHealth;
     public UnityEngine.UI.Image barraVida;
@@ -25,7 +25,7 @@ public class BossMovement : MonoBehaviour
 
     [Header("Damage")]
     [SerializeField] private float damage = 3;
-                        public float Damge => damage;
+    public float Damge => damage;
 
     [Header("Movement")]
     [SerializeField] float speed;
@@ -33,8 +33,8 @@ public class BossMovement : MonoBehaviour
 
     public GameObject target;
 
-
-
+    [SerializeField] private MusicManager musicManager;
+    private bool musicaCombateActivada = false;
     [Header("Drop")]
     [SerializeField] private GameObject Reliquia;
     [SerializeField] int drop;
@@ -62,9 +62,14 @@ public class BossMovement : MonoBehaviour
             return; */
 
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        
+
         if (distance < detectionRange)
         {
+            if (!musicaCombateActivada && musicManager != null)
+            {
+                musicManager.BossAparecio();
+                musicaCombateActivada = true;
+            }
             Vector3 direction = target.transform.position - transform.position;
             direction.y = 0f;
 
@@ -96,16 +101,16 @@ public class BossMovement : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             TakeDamage(other.GetComponent<BulletMovement>().Damage);
-            
+
 
         }
         if (other.gameObject.CompareTag("Player"))
         {
             TakeDamage(other.gameObject.GetComponent<PlayerStats>().PlayerDamage);
-            
+
 
         }
-        
+
     }
 
     public void TakeDamage(float amount)
@@ -119,22 +124,28 @@ public class BossMovement : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            if (target != null)
+            if (musicaCombateActivada && musicManager != null)
             {
-                PlayerStats playerStats = target.GetComponent<PlayerStats>();
-                if (playerStats != null)
-                {
-                    playerStats.MasExp(expBoss);
-                }
+                musicManager.BossMurio();
+                musicaCombateActivada = false;
             }
-            if (bossHealthPanel != null)
-                bossHealthPanel.SetActive(false);
-            Die();
-            DropReliquia();
-            Destroy(gameObject);
+            {
+                if (target != null)
+                {
+                    PlayerStats playerStats = target.GetComponent<PlayerStats>();
+                    if (playerStats != null)
+                    {
+                        playerStats.MasExp(expBoss);
+                    }
+                }
+                if (bossHealthPanel != null)
+                    bossHealthPanel.SetActive(false);
+                Die();
+                DropReliquia();
+                Destroy(gameObject);
+            }
         }
     }
-
     private void Die()
     {
         if (portalNextZone != null)

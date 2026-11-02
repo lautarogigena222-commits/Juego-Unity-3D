@@ -8,6 +8,9 @@ public class Boss_Forest : MonoBehaviour
 
     [Header("Portal")]
     [SerializeField] private GameObject portalNextZone;
+    [Header("Music")]
+    [SerializeField] private MusicManager musicManager;
+    private bool musicaCombateActivada = false;
 
     private void Start()
     {
@@ -21,6 +24,11 @@ public class Boss_Forest : MonoBehaviour
     {
         currentHealth -= amount;
         Debug.Log("Boss HP: " + currentHealth);
+        if (musicaCombateActivada && musicManager != null)
+        {
+            musicManager.BossMurio();
+            musicaCombateActivada = false;
+        }
 
         if (currentHealth <= 0)
             Die();
