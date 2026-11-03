@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Invoke : MonoBehaviour
+public class BossTrigger : MonoBehaviour
 {
     [Header("Boss")]
     [SerializeField] private GameObject boss;
@@ -12,9 +12,18 @@ public class Invoke : MonoBehaviour
     [SerializeField] private Spawn spawner3;
     [SerializeField] private Spawn spawner4;
 
+    [Header("Condición de Invocación")]
+    [SerializeField] private int enemigosRequeridos = 10;
+    private static int enemigosDerrotados = 0;
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
+
+        if (enemigosDerrotados < enemigosRequeridos)
+        {
+            return;
+        }
 
         PausarSpawners();
         DestruirEnemigos();
@@ -25,6 +34,11 @@ public class Invoke : MonoBehaviour
             bossHealthPanel.SetActive(true);
 
         Destroy(gameObject);
+    }
+
+    public static void SumarEnemigoDerrotado()
+    {
+        enemigosDerrotados++;
     }
 
     private void PausarSpawners()

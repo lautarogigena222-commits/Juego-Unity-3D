@@ -124,7 +124,7 @@ PrefabInstance:
       addedObject: {fileID: 9190144424954608481}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d660ac75656b14843aaa2e4661ab9d14, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -7271847950506111182}
+      addedObject: {fileID: 5603436386441019318}
   m_SourcePrefab: {fileID: 100100000, guid: d660ac75656b14843aaa2e4661ab9d14, type: 3}
 --- !u!1 &3679055691871304326 stripped
 GameObject:
@@ -145,15 +145,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   speed: 5
   detectionRange: 100
+  attackRange: 2
   target: {fileID: 919132149155446097, guid: b55683987c2d6f74f94753272090f83f, type: 3}
-  rutina: 0
-  cronometro: 0
-  angulo: {x: 0, y: 0, z: 0, w: 0}
-  grado: 0
   damage: 20
+  attackCooldown: 2
   enemyLife: 10
   moneda: {fileID: 869485794138678735, guid: 384c41e16ca34b544b4611f83a4063a7, type: 3}
-  drop: 0
   expEnemy: 10
 --- !u!136 &9190144424954608481
 CapsuleCollider:
@@ -178,7 +175,7 @@ CapsuleCollider:
   m_Height: 0.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.29, z: 0}
---- !u!54 &-7271847950506111182
+--- !u!54 &5603436386441019318
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

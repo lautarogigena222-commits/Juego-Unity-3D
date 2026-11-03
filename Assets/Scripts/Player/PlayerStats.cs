@@ -72,12 +72,12 @@ public class PlayerStats : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            life -= collision.gameObject.GetComponent<Enemy>().Damge;
+        //if (collision.gameObject.CompareTag("Enemy"))
+        //{
+        //    life -= collision.gameObject.GetComponent<Enemy>().Damge;
 
-            vida.fillAmount = (float)life / lifeMax;
-        }
+        //    vida.fillAmount = (float)life / lifeMax;
+        //}
 
         if (collision.gameObject.CompareTag("Animal"))
         {

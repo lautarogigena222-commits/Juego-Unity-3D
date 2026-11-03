@@ -45,10 +45,18 @@ public class Spawn: MonoBehaviour
 
     private void DetectPlayer()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, interactLayer);
+        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
 
-        playerInZone = hits.Length > 0;
-       
+        playerInZone = false;
+        foreach (Collider hit in hits)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                playerInZone = true;
+                break;
+            }
+        }
+        
     }
 
     private void SpawnEnemy()

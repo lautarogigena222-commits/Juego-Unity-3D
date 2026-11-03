@@ -5,56 +5,48 @@ using UnityEngine.UIElements;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float speed;
-    [SerializeField] private float detectionRange;
+    [SerializeField] private float speed;
+    [SerializeField] private float detectionRange = 15f;
+    [SerializeField] private float attackRange = 2f;
 
     public GameObject target;
     private Spawn spawner;
+    private Animator animator;
 
-    //rutina
-    [SerializeField] int rutina;
-    [SerializeField] float cronometro;
-    public Quaternion angulo;
-    [SerializeField] float grado;
+    [SerializeField] private float damage = 3f;
+    public float Damge => damage;
 
+    [SerializeField] private float attackCooldown = 1.2f;
+    private float nextAttackTime = 0f;
 
-    //Daño
-    [SerializeField] private float damage = 3;
-                     public float Damge => damage;
-
-    [SerializeField] private float enemyLife;
-
-    //Drop
+    [SerializeField] private float enemyLife = 10f;
     [SerializeField] private GameObject moneda;
-    [SerializeField] int drop;
-    [SerializeField] float expEnemy;
-              public float ExpEnemy => expEnemy;
-    private float expPlayer;
+    [SerializeField] private float expEnemy = 10f;
+    public float ExpEnemy => expEnemy;
 
-
-
+    private bool isDead = false;
 
     void Start()
     {
-       
-            target = GameObject.FindGameObjectWithTag("Player");
-        
+        PlayerStats playerStatsInstance = FindFirstObjectByType<PlayerStats>();
+        if (playerStatsInstance != null)
+        {
+            target = playerStatsInstance.gameObject;
+        }
+        animator = GetComponent<Animator>();
     }
 
-   
     void Update()
     {
-        //Comportamiento_Enemy();
-
-        if (target == null) return;
+        if (isDead || target == null) return;
 
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        if (distance < detectionRange)
+
+        if (distance <= detectionRange && distance > attackRange)
         {
             Vector3 direction = target.transform.position - transform.position;
             direction.y = 0f;
 
-            // Verificación de seguridad para evitar vectores en cero
             if (direction != Vector3.zero && direction.sqrMagnitude > 0.001f)
             {
                 Quaternion lookRotation = Quaternion.LookRotation(direction.normalized);
@@ -63,108 +55,85 @@ public class Enemy : MonoBehaviour
 
             Vector3 targetPosition = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+
+            if (animator != null) animator.SetBool("IsWalking", true);
         }
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Bullet"))
+        else if (distance <= attackRange)
         {
-            TakeDamage(other.GetComponent<BulletMovement>().Damage);
+            if (animator != null) animator.SetBool("IsWalking", false);
+
+            if (Time.time >= nextAttackTime)
+            {
+                if (animator != null) animator.SetTrigger("Attack");
+
+                nextAttackTime = Time.time + attackCooldown;
+            }
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        else
         {
-            PlayerStats playerStats = collision.gameObject.GetComponent<PlayerStats>();
-            if (playerStats != null)
-                TakeDamage(playerStats.PlayerDamage);
+            if (animator != null) animator.SetBool("IsWalking", false);
         }
     }
 
     public void TakeDamage(float amount)
     {
-        enemyLife -= amount;
-        CheckDeath();
-    }
+        if (isDead) return;
 
-    private void CheckDeath()
-    {
+        enemyLife -= amount;
         if (enemyLife <= 0)
         {
-            if (target != null)
-            {
-                PlayerStats playerStats = target.GetComponent<PlayerStats>();
-                if (playerStats != null)
-                {
-                    playerStats.MasExp(expEnemy);
-                }
-            }
-
-            if (spawner != null)
-            {
-                spawner.OnEnemyDied();
-            }
-
-            DropMoneda();
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        isDead = true;
+
+        BossTrigger.SumarEnemigoDerrotado();
+
+        if (target != null)
+        {
+            PlayerStats playerStats = target.GetComponent<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.MasExp(expEnemy);
+            }
+        }
+
+        if (spawner != null)
+        {
+            spawner.OnEnemyDied();
+        }
+
+        DropMoneda();
+
+        Destroy(gameObject);
     }
 
     public void DropMoneda()
     {
-        if (enemyLife <= 0)
+        int drop = UnityEngine.Random.Range(0, 2);
+        if (drop == 1 && moneda != null)
         {
-            drop = UnityEngine.Random.Range(0, 2);
-            switch (drop)
-            {
-                case 0:
-                    break;
-                case 1:
-                    Instantiate(moneda, transform.position + Vector3.up * 1, transform.rotation);
-                    break;
-                case 2:
-                    break;
-            }
-
+            Instantiate(moneda, transform.position + Vector3.up * 1f, transform.rotation);
         }
-       
-
-     
     }
-
-   /*public void Comportamiento_Enemy()
-    {
-        cronometro += 1 * Time.deltaTime;
-        if (cronometro >= 2)
-        {
-            rutina = UnityEngine.Random.Range(0, 1);
-            cronometro = 0;
-        }
-        switch (rutina)
-        {
-            case 0:
-                grado = UnityEngine.Random.Range(0, 360);
-                angulo = Quaternion.Euler(0, grado, 0);
-                rutina++;
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
-                //Anim de caminar
-                transform.Translate(Vector3.forward * 1 * Time.deltaTime);
-                break;
-            case 1:
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
-                //Anim de caminar
-                transform.Translate(Vector3.forward * 1 * Time.deltaTime);
-                break;
-        }
-    }*/
 
     public void SetSpawner(Spawn s)
     {
         spawner = s;
     }
 
+    public void HitPlayer()
+    {
+        if (target != null)
+        {
+            PlayerStats playerStats = target.GetComponent<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.TakeDamage(damage);
+            }
+        }
+    }
 }

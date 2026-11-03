@@ -217,13 +217,6 @@ namespace StarterAssets
                 _speed = targetSpeed;
             }
 
-            // El jugador siempre mira hacia donde apunta la cámara
-            _targetRotation = _mainCamera.transform.eulerAngles.y;
-            float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation,
-                ref _rotationVelocity, RotationSmoothTime);
-            transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
-
-            // Movimiento relativo a la cámara
             Vector3 cameraForward = _mainCamera.transform.forward;
             Vector3 cameraRight = _mainCamera.transform.right;
             cameraForward.y = 0f;
@@ -232,16 +225,27 @@ namespace StarterAssets
             cameraRight.Normalize();
 
             Vector3 moveDirection = cameraForward * _input.move.y + cameraRight * _input.move.x;
+
+            if (_input.move != Vector2.zero)
+            {
+                _targetRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+                float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation,
+                    ref _rotationVelocity, RotationSmoothTime);
+                transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+            }
+
             _controller.Move(moveDirection.normalized * (_speed * Time.deltaTime) +
                              new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
-            // Convertir el movimiento global a local para las animaciones
             Vector3 localMove = transform.InverseTransformDirection(moveDirection);
 
             if (_hasAnimator)
             {
                 _animator.SetFloat("MoveX", localMove.x, 0.1f, Time.deltaTime);
                 _animator.SetFloat("MoveZ", localMove.z, 0.1f, Time.deltaTime);
+
+                _animator.SetFloat(_animIDSpeed, _speed);
+
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
             }
         }
