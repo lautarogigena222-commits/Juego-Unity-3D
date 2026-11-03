@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1068307352063670128}
   - component: {fileID: 4684083220577702264}
   - component: {fileID: 2782388195043108023}
+  - component: {fileID: 3661243279182467441}
+  - component: {fileID: 9026374081736089293}
   m_Layer: 0
   m_Name: BossBosque
   m_TagString: Boss
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8653901058673760871}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.6718, y: 1.6718, z: 1.6718}
   m_ConstrainProportionsScale: 0
@@ -99,15 +101,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossMovement
   currentHealth: 100
   maxHealth: 100
-  barraVida: {fileID: 502995242785953248, guid: a6123bbdc7f5f5d4480137e76acf57ef, type: 3}
-  portalNextZone: {fileID: 2881133836238785119, guid: c892744eec568f046843102bff49d731, type: 3}
+  barraVida: {fileID: 0}
+  bossHealthPanel: {fileID: 0}
+  portalNextZone: {fileID: 0}
   damage: 3
   speed: 2
   detectionRange: 50
   target: {fileID: 919132149155446097, guid: b55683987c2d6f74f94753272090f83f, type: 3}
+  musicManager: {fileID: 0}
   Reliquia: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
   drop: 0
   expBoss: 20
+--- !u!114 &3661243279182467441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653901058673760871}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 416401e5b98a33b47820b8ae136ec8cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArbolGigante
+  player: {fileID: 0}
+  velocidad: 3
+--- !u!95 &9026374081736089293
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653901058673760871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d660ac75656b14843aaa2e4661ab9d14, type: 3}
+  m_Controller: {fileID: 9100000, guid: b7e0106bd34480945947519ea81db92a, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5132010284772124464
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,15 +20,18 @@ public class Drops : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            PlayerStats playerStats = other.GetComponent<PlayerStats>();
-            if (playerStats != null)
-            {
-                playerStats.Curar(healFood);
-            }
+        if (!other.CompareTag("Player")) return;
 
-            Destroy(gameObject);
-        }
+        PlayerStats playerStats = other.GetComponentInParent<PlayerStats>();
+        if (playerStats == null) return;
+
+        if (healFood > 0f)
+            playerStats.Curar(healFood);
+
+        if (cantidadDrop > 0)
+            playerStats.TakeCoins(cantidadDrop);
+        Debug.Log("Recogido: " + name + " | monedas: " + cantidadDrop);
+
+        Destroy(gameObject);
     }
 }

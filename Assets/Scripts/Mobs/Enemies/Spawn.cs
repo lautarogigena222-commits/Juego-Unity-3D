@@ -126,6 +126,10 @@ public class Spawn: MonoBehaviour
         enemyNumber--;
         if (enemyNumber < 0) enemyNumber = 0;
     }
+    public void ResetEnemyCount()
+    {
+        enemyNumber = 0;
+    }
 
     private void OnDrawGizmosSelected()
     {

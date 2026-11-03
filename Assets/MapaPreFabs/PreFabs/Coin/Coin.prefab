@@ -72,7 +72,7 @@ MonoBehaviour:
   coins: {fileID: 8702942315783537650, guid: ed72b69dbe3a3364587b06a4f9115bad, type: 3}
   food: {fileID: 0}
   healFood: 0
-  cantidadDrop: 0
+  cantidadDrop: 20
 --- !u!65 &6054054899618752053
 BoxCollider:
   m_ObjectHideFlags: 0

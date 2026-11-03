@@ -130,14 +130,14 @@ public class BossMovement : MonoBehaviour
                 musicaCombateActivada = false;
             }
             {
-                if (target != null)
+                /*if (target != null)
                 {
                     PlayerStats playerStats = target.GetComponent<PlayerStats>();
                     if (playerStats != null)
                     {
                         playerStats.MasExp(expBoss);
                     }
-                }
+                }*/
                 if (bossHealthPanel != null)
                     bossHealthPanel.SetActive(false);
                 Die();

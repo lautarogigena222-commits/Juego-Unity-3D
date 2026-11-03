@@ -92,14 +92,14 @@ public class Enemy : MonoBehaviour
 
         BossTrigger.SumarEnemigoDerrotado();
 
-        if (target != null)
+        /*if (target != null)
         {
             PlayerStats playerStats = target.GetComponent<PlayerStats>();
             if (playerStats != null)
             {
                 playerStats.MasExp(expEnemy);
             }
-        }
+        }*/
 
         if (spawner != null)
         {

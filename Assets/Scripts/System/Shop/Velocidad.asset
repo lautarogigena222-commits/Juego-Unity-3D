@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e027d706f39b462489c9569977eb15d3, type: 3}
   m_Name: Velocidad
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemName: Mejora de Velocidad
+  itemName: Velocidad
   description: 
   icon: {fileID: 0}
   price: 20

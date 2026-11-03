@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4219111, y: 1.4154, z: 1.1146097}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3337193156823127270}
@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.77, y: 1.3, z: 1.1}
-  m_Center: {x: 0, y: 0.19, z: 0}
+  m_Size: {x: 2, y: 1.27, z: 2}
+  m_Center: {x: 0, y: 0.67, z: 0}
 --- !u!114 &7639053213199892523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +69,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cofre
   chestHealth: 0
   possibleUpgrades:
-  - {fileID: 11400000, guid: 7e9660c364b5395499451a73ee0067ba, type: 2}
   - {fileID: 11400000, guid: 708c0fe408abfac45bed641017ce0ed5, type: 2}
   - {fileID: 11400000, guid: e07eae6773a2ad1439166d7124c375ee, type: 2}
+  - {fileID: 11400000, guid: e367263143260dc40ada4adaa4eac399, type: 2}
   - {fileID: 11400000, guid: 98c1f795d4667fd4b87cc319ff3a7407, type: 2}
+  - {fileID: 11400000, guid: 7e9660c364b5395499451a73ee0067ba, type: 2}
+  - {fileID: 11400000, guid: 0bdb67331717273498f1978791c8c368, type: 2}
+  - {fileID: 11400000, guid: 0fd28f7a00042b642bb86e7f79042528, type: 2}
   upgradeUI: {fileID: 0}
 --- !u!1 &8852787092743395933
 GameObject:
@@ -342,7 +345,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 297
+  m_VersionIndex: 458
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -698,7 +701,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 23
+  m_VersionIndex: 500
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2006458552974034700}
   - component: {fileID: 5493824978270183223}
   - component: {fileID: -429651502010297440}
+  - component: {fileID: -3226805647535446087}
   m_Layer: 0
   m_Name: MT01_01b
   m_TagString: Enemy
@@ -49,15 +50,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   speed: 10
   detectionRange: 100
+  attackRange: 2
   target: {fileID: 919132149155446097, guid: b55683987c2d6f74f94753272090f83f, type: 3}
-  rutina: 0
-  cronometro: 0
-  angulo: {x: 0, y: 0, z: 0, w: 0}
-  grado: 0
   damage: 3
+  attackCooldown: 1.2
   enemyLife: 10
   moneda: {fileID: 869485794138678735, guid: 384c41e16ca34b544b4611f83a4063a7, type: 3}
-  drop: 0
   expEnemy: 10
 --- !u!54 &5493824978270183223
 Rigidbody:
@@ -109,6 +107,28 @@ CapsuleCollider:
   m_Height: 0.72775614
   m_Direction: 1
   m_Center: {x: 0, y: 0.3559299, z: 0}
+--- !u!95 &-3226805647535446087
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787734284849576031}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d660ac75656b14843aaa2e4661ab9d14, type: 3}
+  m_Controller: {fileID: 9100000, guid: b7e0106bd34480945947519ea81db92a, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6933688341622265784
 PrefabInstance:
   m_ObjectHideFlags: 0

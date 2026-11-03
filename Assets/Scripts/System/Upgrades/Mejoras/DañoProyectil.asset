@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c06cb9496d13a4f9b578f586c182af, type: 3}
   m_Name: "Da\xF1oProyectil"
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
-  upgradeName: 
+  upgradeName: "Da\xF1o proyectil"
   description: "Aumentar Da\xF1o De Proyectil"
   icon: {fileID: 0}
   upgradeType: 4

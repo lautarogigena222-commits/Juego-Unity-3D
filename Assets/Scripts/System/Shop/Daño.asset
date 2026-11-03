@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e027d706f39b462489c9569977eb15d3, type: 3}
   m_Name: "Da\xF1o"
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
-  itemName: "Mejora de Da\xF1o"
+  itemName: "Da\xF1o Maximo"
   description: 
   icon: {fileID: 0}
   price: 20

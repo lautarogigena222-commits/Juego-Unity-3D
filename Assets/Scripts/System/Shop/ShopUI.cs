@@ -32,7 +32,7 @@ public class ShopUI : MonoBehaviour
 
     public void ShowPrompt(bool show)
     {
-        shopPrompt.SetActive(show);
+        shopPrompt.SetActive(show && !isOpen);
     }
 
     public void OpenShop()
@@ -40,6 +40,7 @@ public class ShopUI : MonoBehaviour
         if (isOpen) return;
         isOpen = true;
 
+        shopPrompt.SetActive(false);
         shopPanel.SetActive(true);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
@@ -83,6 +84,7 @@ public class ShopUI : MonoBehaviour
 
         playerInventory.SpendCoins(item.price);
         playerStats.ApplyUpgrade(item.upgradeData);
+        playerStats.ActualizarMonedasUI();
         monedasText.text = "Monedas: " + playerInventory.Coins;
 
         Debug.Log("Compraste: " + item.itemName);

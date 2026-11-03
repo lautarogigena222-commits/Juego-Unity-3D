@@ -23,15 +23,24 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
     private bool isDead = false;
 
+    [Header("Coins")]
+    [SerializeField] private TextMeshProUGUI MonedasTexto;
+    private PlayerInventory inventory;
+    private int ultimasMonedas = -1;
 
 
-    [Header("Exp")]
-    [SerializeField] float exp;
-    [SerializeField] float expMax;
-    [SerializeField] private UnityEngine.UI.Image experiencia;
-    [SerializeField] float nivel;
-    [SerializeField] float nivelMaximo;
-    [SerializeField] private TextMeshProUGUI nivelTexto;
+
+    //EXP y Nivel
+    float exp;
+     float expMax;
+     private UnityEngine.UI.Image experiencia;
+     float nivel;
+     float nivelMaximo;
+     private TextMeshProUGUI nivelTexto;
+
+
+
+
 
     //Mejora
     [SerializeField] private AutoShooter autoShooter;
@@ -50,11 +59,14 @@ public class PlayerStats : MonoBehaviour
 
         if (ThirdPersonController == null)
             ThirdPersonController = GetComponent<ThirdPersonController>();
+
+        inventory = GetComponent<PlayerInventory>();
+
     }
 
     void Start()
     {
-        nivelTexto.text = "NIVEL: " + nivel.ToString();
+        ActualizarMonedasUI();
     }
 
     
@@ -66,7 +78,9 @@ public class PlayerStats : MonoBehaviour
             exp = 0;
             expMax += 10;
         }
-        nivelTexto.text = "NIVEL: " + nivel.ToString();
+        if (inventory != null && inventory.Coins != ultimasMonedas)
+            ActualizarMonedasUI();
+        //nivelTexto.text = "NIVEL: " + nivel.ToString();
     }
 
 
@@ -110,10 +124,20 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    public void MasExp(float amount)
+    public void TakeCoins(int amount)
     {
-        exp += amount;
-        experiencia.fillAmount = (float)exp / expMax;
+        if (amount <= 0 || inventory == null) return;
+
+        inventory.AddCoins(amount);
+        ActualizarMonedasUI();
+    }
+
+    public void ActualizarMonedasUI()
+    {
+        if (MonedasTexto == null || inventory == null) return;
+
+        ultimasMonedas = inventory.Coins;
+        MonedasTexto.text = "Monedas: " + ultimasMonedas;
     }
 
 
