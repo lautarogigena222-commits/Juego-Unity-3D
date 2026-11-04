@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4814207358420075243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8332040223577430318}
+  - component: {fileID: 3564349788287170658}
+  m_Layer: 0
+  m_Name: HitPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8332040223577430318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4814207358420075243}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.794, y: -0.104, z: 0.219}
+  m_LocalScale: {x: 0.59815764, y: 0.59815764, z: 0.59815764}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4099287706781453621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3564349788287170658
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4814207358420075243}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2977561, y: 1, z: 1.4368061}
+  m_Center: {x: 0.148878, y: 0, z: -0.21791622}
 --- !u!1 &8653901058673760871
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,9 +64,7 @@ GameObject:
   - component: {fileID: 4099287706781453621}
   - component: {fileID: 1068307352063670128}
   - component: {fileID: 4684083220577702264}
-  - component: {fileID: 2782388195043108023}
-  - component: {fileID: 3661243279182467441}
-  - component: {fileID: 9026374081736089293}
+  - component: {fileID: -5887189711918041705}
   m_Layer: 0
   m_Name: BossBosque
   m_TagString: Boss
@@ -35,6 +86,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4661834007884005595}
+  - {fileID: 8332040223577430318}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1068307352063670128
@@ -87,7 +139,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2782388195043108023
+--- !u!114 &-5887189711918041705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,56 +150,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51c2fd94eb52dd848b12fac225635cfa, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossMovement
-  currentHealth: 100
-  maxHealth: 100
-  barraVida: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Anubis
+  currentHealth: 500
+  maxHealth: 500
+  barraVida: {fileID: 8497526374368425084, guid: af3578d3163d1f24b8f36af05e3125ab, type: 3}
   bossHealthPanel: {fileID: 0}
-  portalNextZone: {fileID: 0}
+  portalNextZone: {fileID: 5780489895978701140, guid: 2853d8bac3101b74b93ee808a87933d1, type: 3}
   damage: 3
   speed: 2
-  detectionRange: 50
+  detectionRange: 20
+  attackRange: 2
+  attackCooldown: 1.2
   target: {fileID: 919132149155446097, guid: b55683987c2d6f74f94753272090f83f, type: 3}
+  deathDelay: 3
   musicManager: {fileID: 0}
   Reliquia: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
-  drop: 0
+  drop: 5
   expBoss: 20
---- !u!114 &3661243279182467441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8653901058673760871}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 416401e5b98a33b47820b8ae136ec8cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ArbolGigante
-  player: {fileID: 0}
-  velocidad: 3
---- !u!95 &9026374081736089293
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8653901058673760871}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d660ac75656b14843aaa2e4661ab9d14, type: 3}
-  m_Controller: {fileID: 9100000, guid: b7e0106bd34480945947519ea81db92a, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5132010284772124464
 PrefabInstance:
   m_ObjectHideFlags: 0

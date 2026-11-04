@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3124446098528251408}
   - component: {fileID: 3898316901660170166}
   - component: {fileID: 7028087738829393452}
+  - component: {fileID: 505007429698171259}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -54,7 +55,11 @@ MonoBehaviour:
   damage: 3
   speed: 2
   detectionRange: 20
+  attackRange: 2
+  attackCooldown: 1.2
   target: {fileID: 919132149155446097, guid: b55683987c2d6f74f94753272090f83f, type: 3}
+  deathDelay: 3
+  musicManager: {fileID: 0}
   Reliquia: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
   drop: 5
   expBoss: 20
@@ -81,6 +86,33 @@ CapsuleCollider:
   m_Height: 7.3300314
   m_Direction: 1
   m_Center: {x: 0, y: -0.18501568, z: 0}
+--- !u!54 &505007429698171259
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164325693235460684}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &2238595555299584327
 PrefabInstance:
   m_ObjectHideFlags: 0

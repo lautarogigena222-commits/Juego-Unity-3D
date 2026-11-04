@@ -5,6 +5,7 @@ public class Spawn: MonoBehaviour
 {
     [Header("Enemy")]
     [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject enemy2;
 
     [Header("Spawn")]
     [SerializeField] private float timeBetweenSpawn = 3f;
@@ -71,6 +72,7 @@ public class Spawn: MonoBehaviour
         }
 
         GameObject spawnedEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
+        GameObject spawnedEnemy2 = Instantiate(enemy2, transform.position, Quaternion.identity);
 
 
         Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();

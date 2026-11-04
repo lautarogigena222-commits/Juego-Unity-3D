@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5333476231939318599}
   - component: {fileID: 7417029383694375485}
   - component: {fileID: 9175750758915631981}
+  - component: {fileID: 2033117018363145093}
   m_Layer: 0
   m_Name: Monster42_01
   m_TagString: Untagged
@@ -82,6 +83,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7073798, y: 1.3547744, z: 0.7106815}
   m_Center: {x: 0.0093654925, y: 0.68818146, z: 0.002575496}
+--- !u!114 &2033117018363145093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064182496570947963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c2fd94eb52dd848b12fac225635cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossMovement
+  currentHealth: 0
+  maxHealth: 0
+  barraVida: {fileID: 0}
+  bossHealthPanel: {fileID: 0}
+  portalNextZone: {fileID: 0}
+  damage: 3
+  speed: 0
+  detectionRange: 0
+  attackRange: 2
+  attackCooldown: 1.2
+  target: {fileID: 0}
+  deathDelay: 3
+  musicManager: {fileID: 0}
+  Reliquia: {fileID: 0}
+  drop: 0
+  expBoss: 0
 --- !u!1001 &8095509608874350016
 PrefabInstance:
   m_ObjectHideFlags: 0

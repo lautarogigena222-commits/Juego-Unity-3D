@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopItemData
   itemName: "Da\xF1o Projectil"
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e07499ad1a929f64fbcdc7ca4adb07c3, type: 3}
   price: 20
   upgradeData: {fileID: 11400000, guid: 0bdb67331717273498f1978791c8c368, type: 2}

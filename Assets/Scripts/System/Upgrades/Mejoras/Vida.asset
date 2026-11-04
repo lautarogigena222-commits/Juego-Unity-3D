@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MejorasDatos
   upgradeName: Vida
   description: Aumenta Vida Maxma
-  icon: {fileID: 0}
-  type: 0
+  icon: {fileID: 21300000, guid: a2434eb7f76128c4e8452132f4db7030, type: 3}
+  upgradeType: 0
   value: 10

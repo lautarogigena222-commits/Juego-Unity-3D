@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6716107171376737070}
   - component: {fileID: -4329876299302891806}
   - component: {fileID: -7072235400168150545}
-  - component: {fileID: 7269514178399780114}
   m_Layer: 0
   m_Name: Esqueleto
   m_TagString: Enemy
@@ -131,15 +130,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   speed: 5
   detectionRange: 1000
+  attackRange: 2
   target: {fileID: 919132149155446097, guid: b55683987c2d6f74f94753272090f83f, type: 3}
-  rutina: 0
-  cronometro: 0
-  angulo: {x: 0, y: 0, z: 0, w: 0}
-  grado: 0
   damage: 3
+  attackCooldown: 1.2
   enemyLife: 5
-  moneda: {fileID: 919132149155446097, guid: ed72b69dbe3a3364587b06a4f9115bad, type: 3}
-  drop: 0
+  moneda: {fileID: 869485794138678735, guid: 384c41e16ca34b544b4611f83a4063a7, type: 3}
   expEnemy: 5
 --- !u!54 &-7072235400168150545
 Rigidbody:
@@ -168,25 +164,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!95 &7269514178399780114
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4641162599894494825}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b1e3a6be9a4cc164bb563ae44ed35a4f, type: 3}
-  m_Controller: {fileID: 9100000, guid: b818c33a6bc4d9b4fb07af2754b2b0b5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

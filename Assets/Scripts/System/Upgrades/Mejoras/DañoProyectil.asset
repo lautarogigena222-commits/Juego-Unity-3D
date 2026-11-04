@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeName: "Da\xF1o proyectil"
   description: "Aumentar Da\xF1o De Proyectil"
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e07499ad1a929f64fbcdc7ca4adb07c3, type: 3}
   upgradeType: 4
   value: 10

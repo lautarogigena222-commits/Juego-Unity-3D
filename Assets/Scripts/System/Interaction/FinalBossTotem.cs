@@ -1,25 +1,66 @@
 using UnityEngine;
+using UnityEngine.UI;
+using StarterAssets;
 
-public class FinalBossTotem : MonoBehaviour, IInteractable
+public class FinalBossTotem : MonoBehaviour, IInteractable, IPromptable
 {
-    [SerializeField] private string finalBossScene = "FinalBoss";
+    [Header("Zona final")]
+    [SerializeField] private Transform spawnPlayer;
+    [SerializeField] private Transform spawnBoss;
+
+    [Header("Boss final")]
+    [SerializeField] private GameObject bossPrefab;
+    [SerializeField] private GameObject bossHealthPanel;
+    [SerializeField] private Image bossHealthBar;
+
+    [Header("Cartel")]
+    [SerializeField] private string textoCartel = "Invocar al jefe final [F]";
+
+    private bool invocado = false;
+
+    // Aparece el cartel solo si tiene las 4 reliquias (o ya canjeó la llave)
+    public bool CanShowPrompt => !invocado && CumpleRequisito();
+    public string PromptText => textoCartel;
+
+    private bool CumpleRequisito()
+    {
+        return GameProgress.Instance != null && GameProgress.Instance.HasAllRelics();
+    }
 
     public void Interact()
     {
-        if (GameProgress.Instance == null)
+        if (invocado || !CumpleRequisito()) return;
+
+        if (spawnPlayer == null || spawnBoss == null || bossPrefab == null)
         {
-            Debug.LogWarning("No existe GameProgress.");
+            Debug.LogError("FinalBossTotem: falta asignar Spawn Player, Spawn Boss o Boss Prefab.", this);
             return;
         }
 
-        if (!GameProgress.Instance.HasFinalBossKey)
-        {
-            Debug.Log("El tótem está sellado. Necesitas la llave final.");
-            return;
-        }
+        invocado = true;
 
-        Debug.Log("La llave es aceptada. Accediendo al jefe final...");
+        TeletransportarJugador();
 
-        LoadingManager.LoadScene(finalBossScene);
+        GameObject bossObj = Instantiate(bossPrefab, spawnBoss.position, spawnBoss.rotation);
+
+        BossMovement boss = bossObj.GetComponent<BossMovement>();
+        if (boss != null)
+            boss.SetUI(bossHealthBar, bossHealthPanel);
+
+        if (bossHealthPanel != null)
+            bossHealthPanel.SetActive(true);
+    }
+
+    private void TeletransportarJugador()
+    {
+        ThirdPersonController player = FindFirstObjectByType<ThirdPersonController>();
+        if (player == null) return;
+
+        CharacterController cc = player.GetComponent<CharacterController>();
+
+        cc.enabled = false;
+        player.transform.position = spawnPlayer.position;
+        player.transform.rotation = spawnPlayer.rotation;
+        cc.enabled = true;
     }
 }

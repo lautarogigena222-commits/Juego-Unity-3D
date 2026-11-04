@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4034011826787673712}
   - component: {fileID: 8421610128135677915}
   - component: {fileID: 2707601618687968185}
+  - component: {fileID: 2820914427945463509}
   m_Layer: 0
   m_Name: Boss_Cave
   m_TagString: Untagged
@@ -84,6 +85,34 @@ CapsuleCollider:
   m_Height: 6.7852
   m_Direction: 1
   m_Center: {x: 0.22844315, y: -0.3664217, z: -0.25}
+--- !u!114 &2820914427945463509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342838100854176628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c2fd94eb52dd848b12fac225635cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossMovement
+  currentHealth: 0
+  maxHealth: 0
+  barraVida: {fileID: 0}
+  bossHealthPanel: {fileID: 0}
+  portalNextZone: {fileID: 0}
+  damage: 3
+  speed: 0
+  detectionRange: 0
+  attackRange: 2
+  attackCooldown: 1.2
+  target: {fileID: 0}
+  deathDelay: 3
+  musicManager: {fileID: 0}
+  Reliquia: {fileID: 0}
+  drop: 0
+  expBoss: 0
 --- !u!1001 &4015752960431601106
 PrefabInstance:
   m_ObjectHideFlags: 0

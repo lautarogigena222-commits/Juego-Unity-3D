@@ -4,9 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("Interacción")]
-    [SerializeField] private float detectionRadius;
+    [SerializeField] private float detectionRadius = 5f;
     [SerializeField] private LayerMask interactLayer;
-    //private bool playerInZone = false;
 
     private PlayerControls controls;
     private IInteractable currentInteractable;
@@ -14,9 +13,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         controls = new PlayerControls();
-
         controls.Player.Interact.performed += OnInteract;
-
         controls.Player.Enable();
     }
 
@@ -27,31 +24,42 @@ public class PlayerInteraction : MonoBehaviour
 
     private void DetectInteractable()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, interactLayer);
+        currentInteractable = null;
+        string texto = "Interactuar [F]";
 
-        
+        bool tiendaAbierta = ShopUI.Instance != null && ShopUI.Instance.IsOpen;
 
-        if (hits.Length > 0)
+        if (!tiendaAbierta)
         {
-         
+            Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius, interactLayer);
+            float masCercano = Mathf.Infinity;
 
-            IInteractable interactable = hits[0].GetComponentInParent<IInteractable>();
-
-        
-
-
-            if (interactable != null)
+            foreach (Collider hit in hits)
             {
+                IInteractable interactable = hit.GetComponentInParent<IInteractable>();
+                if (interactable == null) continue;
+
+                IPromptable promptable = interactable as IPromptable;
+                if (promptable != null && !promptable.CanShowPrompt) continue;
+
+                float distancia = Vector3.Distance(transform.position, hit.transform.position);
+                if (distancia >= masCercano) continue;
+
+                masCercano = distancia;
                 currentInteractable = interactable;
-                ShopUI.Instance?.ShowPrompt(true);
-                return;
+
+                if (promptable != null)
+                    texto = promptable.PromptText;
             }
         }
 
-        currentInteractable = null;
-        ShopUI.Instance?.ShowPrompt(false);
-    }
+        if (InteractionPromptUI.Instance == null) return;
 
+        if (currentInteractable != null)
+            InteractionPromptUI.Instance.Show(texto);
+        else
+            InteractionPromptUI.Instance.Hide();
+    }
 
     private void OnInteract(InputAction.CallbackContext ctx)
     {
@@ -75,15 +83,9 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
-
-    /*public interface IInteractable
-    {
-        void Interact();
-    }*/
 }

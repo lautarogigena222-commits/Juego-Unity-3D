@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MejorasDatos
   upgradeName: "Mejora Da\xF1o"
   description: "Mejora el Da\xF1o"
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 42c1c49992039524b830efae4e7c5dae, type: 3}
   upgradeType: 1
   value: 10
