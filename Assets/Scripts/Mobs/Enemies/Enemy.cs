@@ -12,6 +12,10 @@ public class Enemy : MonoBehaviour
     public GameObject target;
     private Spawn spawner;
     private Animator animator;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private AudioClip damageSound;
+    [SerializeField] private AudioClip spawnSound;
 
     [SerializeField] private float damage = 3f;
     public float Damge => damage;
@@ -34,8 +38,13 @@ public class Enemy : MonoBehaviour
             target = playerStatsInstance.gameObject;
         }
         animator = GetComponent<Animator>();
-    }
 
+    }
+    public void PlaySpawnSound()
+    {
+        if (audioSource != null && spawnSound != null)
+            audioSource.PlayOneShot(spawnSound);
+    }
     void Update()
     {
         if (isDead || target == null) return;
@@ -79,10 +88,23 @@ public class Enemy : MonoBehaviour
     {
         if (isDead) return;
 
+        if (audioSource != null && damageSound != null)
+        {
+            audioSource.PlayOneShot(damageSound);
+        }
+
         enemyLife -= amount;
+
         if (enemyLife <= 0)
         {
             Die();
+        }
+    }
+    public void PlayAttackSound()
+    {
+        if (audioSource != null && attackSound != null)
+        {
+            audioSource.PlayOneShot(attackSound);
         }
     }
 
