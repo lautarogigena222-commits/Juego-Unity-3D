@@ -241,11 +241,10 @@ namespace StarterAssets
 
             if (_hasAnimator)
             {
-                _animator.SetFloat("MoveX", localMove.x, 0.1f, Time.deltaTime);
-                _animator.SetFloat("MoveZ", localMove.z, 0.1f, Time.deltaTime);
+                float moveMultiplier = _input.sprint ? 2f : 1f;
 
-                _animator.SetFloat(_animIDSpeed, _speed);
-
+                _animator.SetFloat("MoveX", localMove.x * moveMultiplier);
+                _animator.SetFloat("MoveZ", localMove.z * moveMultiplier);
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
             }
         }
@@ -265,7 +264,7 @@ namespace StarterAssets
 
                 if (_verticalVelocity < 0.0f)
                 {
-                    _verticalVelocity = -2f;
+                    _verticalVelocity = -5f;
                 }
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
