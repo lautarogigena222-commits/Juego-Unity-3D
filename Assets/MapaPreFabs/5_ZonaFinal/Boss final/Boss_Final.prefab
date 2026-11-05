@@ -10,17 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7460870945994563551}
   - component: {fileID: -1927783071368252717}
-  - component: {fileID: 7501470637545217591}
-  - component: {fileID: 1233246434150004418}
-  - component: {fileID: 3476568344813119019}
-  - component: {fileID: 1615201389467585586}
-  - component: {fileID: 7608933389714975484}
   - component: {fileID: 7023326049541624468}
-  - component: {fileID: 2268393742854929166}
-  - component: {fileID: 7660861653440094073}
+  - component: {fileID: 2709296722979175495}
   m_Layer: 0
   m_Name: Boss_Final
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,123 +52,26 @@ MonoBehaviour:
   barraVida: {fileID: 0}
   bossHealthPanel: {fileID: 0}
   portalNextZone: {fileID: 0}
-  damage: 3
+  damage: 50
+  damageByAnimationEvent: 1
+  hitDelay: 0.5
+  contactDamage: 3
+  contactCooldown: 1
+  contactRange: 2.5
+  contactHeight: 3
   speed: 5
   detectionRange: 50
   attackRange: 2
   attackCooldown: 1.2
   target: {fileID: 0}
+  animator: {fileID: 0}
   deathDelay: 3
   musicManager: {fileID: 0}
   Reliquia: {fileID: 869485794138678735, guid: 384c41e16ca34b544b4611f83a4063a7, type: 3}
-  drop: 100
-  expBoss: 0
   relicNumber: 0
---- !u!65 &7501470637545217591
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957488042726834834}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.4265118, y: 5.763706, z: 1}
-  m_Center: {x: -0.04728222, y: 1.8894863, z: 0}
---- !u!65 &1233246434150004418
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957488042726834834}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.1521225, y: 1, z: 1}
-  m_Center: {x: -2.3339386, y: 2.21, z: 0}
---- !u!65 &3476568344813119019
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957488042726834834}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.98, y: 1, z: 1}
-  m_Center: {x: 2.14, y: 2.16, z: 0}
---- !u!65 &1615201389467585586
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957488042726834834}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.05, y: 2.58, z: 2.11}
-  m_Center: {x: 4.19, y: 2.21, z: 0}
---- !u!65 &7608933389714975484
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957488042726834834}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.05, y: 2.58, z: 2.11}
-  m_Center: {x: -4.41, y: 2.21, z: 0}
+  expBoss: 0
+  isFinalBoss: 1
+  victoryDelay: 2
 --- !u!54 &7023326049541624468
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -200,42 +97,31 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2268393742854929166
-MonoBehaviour:
+--- !u!136 &2709296722979175495
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957488042726834834}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c82bff1bbee86241b7ead24b9a86a78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ComportamientoBomba
-  explosionVFX: {fileID: 0}
-  fuerzaLanzamiento: 12
---- !u!114 &7660861653440094073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957488042726834834}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a0d24ff900d3c442ba74e527766253a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::JefeFinalCaballero
-  vida: 100
-  player: {fileID: 0}
-  agent: {fileID: 0}
-  rb: {fileID: 7023326049541624468}
-  bombaPrefab: {fileID: 919132149155446097, guid: 9ef7afa9e6c23e149abdd5540247926f, type: 3}
-  puntoLanzamiento: {fileID: 0}
-  fuerzaSalto: 15
-  tiempoEntreAtaques: 3
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.25
+  m_Height: 5.913742
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.9963684, z: 0}
 --- !u!1001 &6612316538764601699
 PrefabInstance:
   m_ObjectHideFlags: 0

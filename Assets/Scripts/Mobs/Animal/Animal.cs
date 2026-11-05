@@ -27,6 +27,8 @@ namespace ithappy.Animals_FREE
 
         private CharacterController controller;
         private Animator animator;
+        private bool isDead = false;
+        private Spawn spawner;
 
 
         private float cronometro;
@@ -144,5 +146,28 @@ namespace ithappy.Animals_FREE
 
             movingTime = Random.Range(4f, 12f);
         }
+
+        private void OnEnable()
+        {
+            PlayerStats.OnPlayerRespawn += DespawnPorRespawn;
+        }
+
+        private void OnDisable()
+        {
+            PlayerStats.OnPlayerRespawn -= DespawnPorRespawn;
+        }
+
+        private void DespawnPorRespawn()
+        {
+            if (isDead) return;
+            isDead = true;
+
+            if (spawner != null)
+                spawner.OnEnemyDied();
+
+            Destroy(gameObject);
+        }
     }
+
+
 }

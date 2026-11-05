@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 1068307352063670128}
   - component: {fileID: 4684083220577702264}
   - component: {fileID: -5887189711918041705}
+  - component: {fileID: 2630933606194608985}
   m_Layer: 0
   m_Name: BossBosque
   m_TagString: Boss
@@ -151,23 +152,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c2fd94eb52dd848b12fac225635cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Anubis
-  currentHealth: 500
-  maxHealth: 500
+  currentHealth: 100
+  maxHealth: 100
   barraVida: {fileID: 0}
   bossHealthPanel: {fileID: 0}
-  portalNextZone: {fileID: 5780489895978701140, guid: 2853d8bac3101b74b93ee808a87933d1, type: 3}
-  damage: 3
+  portalNextZone: {fileID: 0}
+  damage: 10
+  damageByAnimationEvent: 1
+  hitDelay: 0.5
+  contactDamage: 3
+  contactCooldown: 1
+  contactRange: 2.5
+  contactHeight: 3
+  bossTakesContactDamage: 0
   speed: 2
   detectionRange: 20
   attackRange: 2
   attackCooldown: 1.2
   target: {fileID: 919132149155446097, guid: b55683987c2d6f74f94753272090f83f, type: 3}
+  animator: {fileID: 2630933606194608985}
   deathDelay: 3
   musicManager: {fileID: 0}
   Reliquia: {fileID: 1439760380054801303, guid: 67f271b5094eb934cada38e737bffab6, type: 3}
-  drop: 0
-  expBoss: 20
   relicNumber: 1
+  expBoss: 20
+  isFinalBoss: 0
+  victoryDelay: 2
+--- !u!95 &2630933606194608985
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653901058673760871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d660ac75656b14843aaa2e4661ab9d14, type: 3}
+  m_Controller: {fileID: 9100000, guid: b7e0106bd34480945947519ea81db92a, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5132010284772124464
 PrefabInstance:
   m_ObjectHideFlags: 0

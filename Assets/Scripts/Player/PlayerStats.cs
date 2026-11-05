@@ -25,6 +25,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Transform spawnBase;
     [SerializeField] private float delayPanelMuerte = 2f;
     private bool isDead = false;
+    public bool IsDead => isDead;
+    public static event System.Action OnPlayerDied;
 
     [Header("Coins")]
     [SerializeField] private TextMeshProUGUI MonedasTexto;
@@ -49,8 +51,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private AutoShooter autoShooter;
     [SerializeField] private ThirdPersonController ThirdPersonController;
 
-    //Escenas
-    private Escena sceneController;
+
+
+    public static event System.Action OnPlayerRespawn;
 
 
 
@@ -64,6 +67,11 @@ public class PlayerStats : MonoBehaviour
             ThirdPersonController = GetComponent<ThirdPersonController>();
 
         inventory = GetComponent<PlayerInventory>();
+
+        life = lifeMax;
+
+        if (vida != null)
+            vida.fillAmount = 1f;
 
     }
 
@@ -89,12 +97,6 @@ public class PlayerStats : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject.CompareTag("Enemy"))
-        //{
-        //    life -= collision.gameObject.GetComponent<Enemy>().Damge;
-
-        //    vida.fillAmount = (float)life / lifeMax;
-        //}
 
         if (collision.gameObject.CompareTag("Animal"))
         {
@@ -115,14 +117,6 @@ public class PlayerStats : MonoBehaviour
             {
                 life = lifeMax;
             }
-        }
-        if (other.gameObject.CompareTag("Boss"))
-        {
-                life -= other.gameObject.GetComponent<BossMovement>().Damge;
-                exp += other.gameObject.GetComponent<BossMovement>().ExpBoss;
-            
-            vida.fillAmount = (float)life / lifeMax;
-            experiencia.fillAmount = (float)exp / expMax;
         }
 
     }
@@ -176,6 +170,7 @@ public class PlayerStats : MonoBehaviour
     private void Die()
     {
         isDead = true;
+        OnPlayerDied?.Invoke();
         life = 0;
         vida.fillAmount = 0;
 
@@ -229,6 +224,27 @@ public class PlayerStats : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        OnPlayerRespawn?.Invoke();
+    }
+
+    public void RestaurarVidaCompleta()
+    {
+        isDead = false;
+        life = lifeMax;
+
+        if (vida != null)
+            vida.fillAmount = 1f;
+
+        if (playerAnimator != null)
+            playerAnimator.SetBool("IsDead", false);
+
+        if (ThirdPersonController != null)
+            ThirdPersonController.enabled = true;
+
+        if (panelMuerte != null)
+            panelMuerte.SetActive(false);
+
+        Debug.Log("Vida restaurada: " + life + " / " + lifeMax);
     }
 
 

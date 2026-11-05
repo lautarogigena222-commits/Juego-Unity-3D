@@ -12,6 +12,7 @@ public class FinalBossTotem : MonoBehaviour, IInteractable, IPromptable
     [SerializeField] private GameObject bossPrefab;
     [SerializeField] private GameObject bossHealthPanel;
     [SerializeField] private Image bossHealthBar;
+    private GameObject bossActual;
 
     [Header("Cartel")]
     [SerializeField] private string textoCartel = "Invocar al jefe final [F]";
@@ -37,19 +38,22 @@ public class FinalBossTotem : MonoBehaviour, IInteractable, IPromptable
     {
         if (invocado || !CumpleRequisito()) return;
 
+        if (spawnPlayer == null) Debug.LogError("FinalBossTotem: falta Spawn Player", this);
+        if (spawnBoss == null) Debug.LogError("FinalBossTotem: falta Spawn Boss", this);
+        if (bossPrefab == null) Debug.LogError("FinalBossTotem: falta Boss Prefab", this);
+
         if (spawnPlayer == null || spawnBoss == null || bossPrefab == null)
-        {
-            Debug.LogError("FinalBossTotem: falta asignar Spawn Player, Spawn Boss o Boss Prefab.", this);
             return;
-        }
 
         invocado = true;
 
         TeletransportarJugador();
+        if (bossActual != null)
+            Destroy(bossActual);
 
-        GameObject bossObj = Instantiate(bossPrefab, spawnBoss.position, spawnBoss.rotation);
+        bossActual = Instantiate(bossPrefab, spawnBoss.position, spawnBoss.rotation);
 
-        BossMovement boss = bossObj.GetComponent<BossMovement>();
+        BossMovement boss = bossActual.GetComponent<BossMovement>();
         if (boss != null)
             boss.SetUI(bossHealthBar, bossHealthPanel);
 
@@ -68,5 +72,33 @@ public class FinalBossTotem : MonoBehaviour, IInteractable, IPromptable
         player.transform.position = spawnPlayer.position;
         player.transform.rotation = spawnPlayer.rotation;
         cc.enabled = true;
+    }
+    private void OnEnable()
+    {
+        PlayerStats.OnPlayerDied += DestruirBoss;
+        PlayerStats.OnPlayerRespawn += ResetInvocacion;
+    }
+
+    private void OnDisable()
+    {
+        PlayerStats.OnPlayerDied -= DestruirBoss;
+        PlayerStats.OnPlayerRespawn -= ResetInvocacion;
+    }
+
+    private void DestruirBoss()
+    {
+        if (bossActual != null)
+            Destroy(bossActual);
+
+        bossActual = null;
+
+        if (bossHealthPanel != null)
+            bossHealthPanel.SetActive(false);
+    }
+
+    private void ResetInvocacion()
+    {
+        DestruirBoss();
+        invocado = false;
     }
 }

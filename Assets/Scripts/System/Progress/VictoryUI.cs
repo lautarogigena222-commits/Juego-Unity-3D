@@ -9,6 +9,7 @@ public class VictoryUI : MonoBehaviour
 
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private Transform spawnBase;
+    [SerializeField] private GameObject playerHUD;
 
     private void Awake()
     {
@@ -25,7 +26,7 @@ public class VictoryUI : MonoBehaviour
 
     private IEnumerator ShowRoutine(float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         Show();
     }
 
@@ -33,6 +34,10 @@ public class VictoryUI : MonoBehaviour
     {
         if (victoryPanel != null)
             victoryPanel.SetActive(true);
+
+        if (playerHUD != null)
+            playerHUD.SetActive(false);
+
 
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
@@ -55,15 +60,30 @@ public class VictoryUI : MonoBehaviour
         if (victoryPanel != null)
             victoryPanel.SetActive(false);
 
+        if (playerHUD != null)
+            playerHUD.SetActive(true);
+
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    // Botón "Reiniciar"
     public void Reiniciar()
     {
+        PlayerStats stats = FindFirstObjectByType<PlayerStats>();
+
+        if (stats != null)
+            stats.RestaurarVidaCompleta();
+
+        if (victoryPanel != null)
+            victoryPanel.SetActive(false);
+
+        if (playerHUD != null)
+            playerHUD.SetActive(true);
+
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
