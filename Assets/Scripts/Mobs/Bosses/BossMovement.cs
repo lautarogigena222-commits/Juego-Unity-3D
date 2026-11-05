@@ -171,7 +171,7 @@ public class BossMovement : MonoBehaviour
     private void SetWalking(bool walking)
     {
         if (animator != null)
-            animator.SetBool("isWalking", walking);
+            animator.SetBool("IsWalking", walking);
     }
 
     public void TakeDamage(float amount)
@@ -208,9 +208,6 @@ public class BossMovement : MonoBehaviour
 
         if (isFinalBoss && VictoryUI.Instance != null)
             VictoryUI.Instance.ShowDelayed(victoryDelay);
-
-        foreach (Collider c in GetComponentsInChildren<Collider>())
-            c.enabled = false;
 
         SetWalking(false);
         if (animator != null)

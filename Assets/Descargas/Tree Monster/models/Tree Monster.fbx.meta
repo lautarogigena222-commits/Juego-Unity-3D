@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: d660ac75656b14843aaa2e4661ab9d14
+AssetOrigin:
+  serializedVersion: 1
+  productId: 381418
+  packageName: Tree Monster
+  packageVersion: 1.0
+  assetPath: Assets/Tree Monster/models/Tree Monster.fbx
+  uploadId: 919552
 ModelImporter:
-  serializedVersion: 22200
+  serializedVersion: 24200
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -22,7 +29,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -56,6 +63,9 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -80,7 +90,247 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Tree Monster(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: shuling_01
+      parentName: Tree Monster(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bip001
+      parentName: Tree Monster(Clone)
+      position: {x: 0, y: 0, z: -0.075431354}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IK Chain002
+      parentName: Bip001
+      position: {x: 0.15331067, y: -0.120595604, z: -0.000023164748}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IK Chain003
+      parentName: Bip001
+      position: {x: 0.15331064, y: 0.0787297, z: -0.00002322197}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IK Chain004
+      parentName: Bip001
+      position: {x: -0.15330943, y: 0.078729734, z: -0.0000232172}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: IK Chain001
+      parentName: Bip001
+      position: {x: -0.1533094, y: -0.12059556, z: -0.000023231505}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone001
+      parentName: Bip001
+      position: {x: -0.00042323972, y: -0.021485075, z: 0.058253173}
+      rotation: {x: 0.50000006, y: 0.4999999, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone002
+      parentName: Bone001
+      position: {x: -0.06873062, y: -0.000000003054738, z: 0.0000000023841857}
+      rotation: {x: -2.4224912e-16, y: 1.5275002e-17, z: 0.0076328972, w: 0.9999709}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone003
+      parentName: Bone002
+      position: {x: -0.13050379, y: -0.00000003069639, z: 0.0000000047683715}
+      rotation: {x: -1.8434817e-14, y: 5.781312e-16, z: -0.10052876, w: 0.99493414}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone004
+      parentName: Bone003
+      position: {x: -0.1560949, y: -0.000000023841856, z: 0.0000000023841857}
+      rotation: {x: -4.605094e-15, y: -1.3126552e-15, z: 0.23459075, w: 0.97209424}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone005
+      parentName: Bone003
+      position: {x: -0.07857086, y: -0.06944409, z: -0.021485023}
+      rotation: {x: 0.15112893, y: -0.012709888, z: 0.6968166, w: 0.7010315}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone006
+      parentName: Bone005
+      position: {x: -0.09634183, y: 0.000000019073486, z: 0.000000014305114}
+      rotation: {x: 0.026297074, y: 0.12284329, z: 0.054027528, w: 0.9906054}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone007
+      parentName: Bone006
+      position: {x: -0.10673828, y: -0.000000095367426, z: 0.000000007152557}
+      rotation: {x: -0.024122387, y: 0.012040516, z: 0.025852045, w: 0.9993022}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone008
+      parentName: Bone007
+      position: {x: -0.10011047, y: 0.00000047683716, z: 0.0000000023841857}
+      rotation: {x: -0.014741886, y: -0.08196421, z: 0.096444786, w: 0.99184823}
+      scale: {x: 0.999999, y: 0.999999, z: 1}
+    - name: Bone009
+      parentName: Bone008
+      position: {x: -0.13522226, y: 0.000000038146972, z: -0.000000009536743}
+      rotation: {x: 0.000000007450581, y: -0.000000007450581, z: -0.0000000037252903, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone024
+      parentName: Bone002
+      position: {x: -0.03183565, y: -0.0040025525, z: 0.07078848}
+      rotation: {x: -0.035419237, y: -0.000098992765, z: 0.99936867, w: -0.0027809246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone025
+      parentName: Bone024
+      position: {x: -0.075993225, y: -0.000000022500753, z: 0.000000009536743}
+      rotation: {x: -0.004369972, y: 0.0117587885, z: -0.016677013, w: 0.99978226}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone026
+      parentName: Bone025
+      position: {x: -0.083909184, y: 0.0000000017881393, z: -0.000000019073486}
+      rotation: {x: 0.0000000011641533, y: -0.000000007450579, z: -0.000000005122273, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone024(mirrored)
+      parentName: Bone002
+      position: {x: -0.03183567, y: -0.004002576, z: -0.077469826}
+      rotation: {x: -0.0027808978, y: 0.99936867, z: -0.000098246586, w: -0.035419382}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone025(mirrored)
+      parentName: Bone024(mirrored)
+      position: {x: -0.07599323, y: 0.00000001952052, z: -0.000000009536743}
+      rotation: {x: -0.006189485, y: 0.040322207, z: -0.023541262, w: 0.9988902}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone026(mirrored)
+      parentName: Bone025(mirrored)
+      position: {x: -0.0839092, y: -0.000000010877847, z: 0.000000019073486}
+      rotation: {x: 0, y: 0, z: -0.000000040978183, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone015
+      parentName: Bone001
+      position: {x: -0.05075365, y: -0.08334558, z: 0.053946294}
+      rotation: {x: -0.022392763, y: 0.2614662, z: 0.95791054, w: 0.11636786}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone016
+      parentName: Bone015
+      position: {x: -0.043801833, y: -0.000000009536743, z: -0.0000000023841857}
+      rotation: {x: 0.012006933, y: -0.027812112, z: 0.28763503, w: 0.95726085}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone017
+      parentName: Bone016
+      position: {x: -0.06969182, y: 0.000000038146972, z: -0.0000000023841857}
+      rotation: {x: 0.15863332, y: 0.016038919, z: -0.19047657, w: 0.96865726}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone018
+      parentName: Bone017
+      position: {x: -0.043430224, y: 0.000000019073486, z: -0.000000011920928}
+      rotation: {x: -0.000000007901688, y: 4.6566118e-10, z: 9.3132235e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone020
+      parentName: Bone001
+      position: {x: -0.05075365, y: -0.083345585, z: -0.0550506}
+      rotation: {x: 0.61747694, y: 0.7361453, z: 0.20862341, w: -0.18245155}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone021
+      parentName: Bone020
+      position: {x: -0.043801792, y: 0, z: 0.000000007152557}
+      rotation: {x: -0.00000002750821, y: -0.00000008956487, z: -0.39635774, w: 0.9180961}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone022
+      parentName: Bone021
+      position: {x: -0.06969182, y: 0, z: 0.0000000047683715}
+      rotation: {x: 0.00000020490549, y: -0.000000048506433, z: -0.2731733, w: 0.96196485}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone023
+      parentName: Bone022
+      position: {x: -0.043430198, y: -0.000000019073486, z: 0.0000000011920929}
+      rotation: {x: 0.0000000012660166, y: 4.656613e-10, z: -9.313226e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone020(mirrored)
+      parentName: Bone001
+      position: {x: -0.05075365, y: 0.08419321, z: -0.0550506}
+      rotation: {x: -0.61747706, y: 0.73614526, z: -0.20862351, w: -0.18245144}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone021(mirrored)
+      parentName: Bone020(mirrored)
+      position: {x: -0.043801825, y: 0, z: 0.00000000834465}
+      rotation: {x: 0.00000010254867, y: -0.000000049560608, z: 0.3963577, w: 0.9180962}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone022(mirrored)
+      parentName: Bone021(mirrored)
+      position: {x: -0.06969183, y: 0.000000057220458, z: 0.000000013113022}
+      rotation: {x: -0.00000026569015, y: -0.00000007544917, z: 0.2731733, w: 0.96196485}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone023(mirrored)
+      parentName: Bone022(mirrored)
+      position: {x: -0.0434302, y: 0.000000038146972, z: 0.0000000011920929}
+      rotation: {x: -0.0000002313464, y: -0.000000008847565, z: 9.3132063e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone015(mirrored)
+      parentName: Bone001
+      position: {x: -0.05075365, y: 0.084193215, z: 0.053946275}
+      rotation: {x: 0.022420792, y: 0.2614408, z: -0.9579178, w: 0.11635946}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone016(mirrored)
+      parentName: Bone015(mirrored)
+      position: {x: -0.04380185, y: 0.000000009536743, z: -0.0000000047683715}
+      rotation: {x: -0.012013395, y: -0.027827382, z: -0.28762773, w: 0.95726264}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone017(mirrored)
+      parentName: Bone016(mirrored)
+      position: {x: -0.06969182, y: -0.000000057220458, z: -0.000000009536743}
+      rotation: {x: -0.15407883, y: 0.016934393, z: 0.19043443, w: 0.96938527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone018(mirrored)
+      parentName: Bone017(mirrored)
+      position: {x: -0.043430217, y: -0.000000057220458, z: -0.000000009536743}
+      rotation: {x: -9.604264e-10, y: -0.000000019092113, z: -9.313226e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone010
+      parentName: Tree Monster(Clone)
+      position: {x: 0.1386566, y: 0.29272276, z: -0.057780456}
+      rotation: {x: -0.045440976, y: 0.108551, z: 0.8993465, w: 0.4211031}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone011
+      parentName: Bone010
+      position: {x: -0.15142053, y: 0.025236662, z: 0.060292996}
+      rotation: {x: 0.008165832, y: 0.08174492, z: -0.160853, w: 0.98355347}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone012
+      parentName: Bone011
+      position: {x: -0.07111048, y: 0.000000076293944, z: 0.000000009536743}
+      rotation: {x: -0.00000022289099, y: 0.000000022398396, z: -0.03357965, w: 0.9994361}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone013
+      parentName: Bone010
+      position: {x: -0.16154262, y: -0.024372214, z: 0.02131935}
+      rotation: {x: 0.000000021341972, y: 0.00000009564493, z: -0.06684183, w: 0.9977636}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone014
+      parentName: Bone013
+      position: {x: -0.109111615, y: -0.00000015258789, z: 0.0000000333786}
+      rotation: {x: -0.0000002255788, y: 0.000000050158864, z: -0.18546969, w: 0.98265}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone010(mirrored)
+      parentName: Tree Monster(Clone)
+      position: {x: -0.13587962, y: 0.3436453, z: -0.012199581}
+      rotation: {x: -0.12908542, y: 0.06059146, z: 0.4205688, w: 0.8959841}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone011(mirrored)
+      parentName: Bone010(mirrored)
+      position: {x: -0.15142044, y: -0.025236702, z: 0.060292985}
+      rotation: {x: -0.008165712, y: 0.08174483, z: 0.1608529, w: 0.9835535}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone012(mirrored)
+      parentName: Bone011(mirrored)
+      position: {x: -0.07111045, y: -0.000000057220458, z: 0.000000028610229}
+      rotation: {x: 0.00000022882575, y: 0.00000006868869, z: 0.10321535, w: 0.994659}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone013(mirrored)
+      parentName: Bone010(mirrored)
+      position: {x: -0.16154256, y: 0.024372177, z: 0.021319322}
+      rotation: {x: -0.000000008429938, y: 0.000000014369827, z: 0.06684182, w: 0.9977636}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone014(mirrored)
+      parentName: Bone013(mirrored)
+      position: {x: -0.10911159, y: 0.000000114440915, z: 0.000000038146972}
+      rotation: {x: -0.00000021450724, y: -0.00000007986485, z: 0.28716874, w: 0.95788}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -91,7 +341,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
@@ -105,10 +355,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 381418
-  packageName: Tree Monster
-  packageVersion: 1.0
-  assetPath: Assets/Tree Monster/models/Tree Monster.fbx
-  uploadId: 919552

@@ -72,7 +72,7 @@ public class Spawn: MonoBehaviour
         }
 
         GameObject spawnedEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
-        GameObject spawnedEnemy2 = Instantiate(enemy2, transform.position, Quaternion.identity);
+        GameObject spawnedEnemy2 = Instantiate(enemy2, transform.position + Vector3.right * 2f, Quaternion.identity);
 
 
         Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();
