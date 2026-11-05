@@ -171,7 +171,7 @@ public class BossMovement : MonoBehaviour
     private void SetWalking(bool walking)
     {
         if (animator != null)
-            animator.SetBool("IsWalking", walking);
+            animator.SetBool("isWalking", walking);
     }
 
     public void TakeDamage(float amount)
