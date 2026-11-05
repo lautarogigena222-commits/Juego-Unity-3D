@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7417029383694375485}
   - component: {fileID: 9175750758915631981}
   - component: {fileID: 2033117018363145093}
+  - component: {fileID: 4027367459245258231}
   m_Layer: 0
   m_Name: Monster42_01
   m_TagString: Untagged
@@ -111,6 +112,29 @@ MonoBehaviour:
   Reliquia: {fileID: 0}
   drop: 0
   expBoss: 0
+  relicNumber: 1
+--- !u!95 &4027367459245258231
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064182496570947963}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a24d9fc685b11646993ecbdaabc28d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8095509608874350016
 PrefabInstance:
   m_ObjectHideFlags: 0

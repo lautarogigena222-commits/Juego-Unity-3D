@@ -74,35 +74,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 153977119569467244}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3918056219085432484}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 829100495131198817}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2406111669170108260}
   m_SourcePrefab: {fileID: 100100000, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
 --- !u!1 &1439760380054801303 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
   m_PrefabInstance: {fileID: 2250225030016546502}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &153977119569467244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439760380054801303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22764be0362f8264598a0d91360d028e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drops
-  coins: {fileID: 8702942315783537650, guid: ed72b69dbe3a3364587b06a4f9115bad, type: 3}
-  food: {fileID: 0}
-  healFood: 0
-  cantidadDrop: 20
 --- !u!95 &3918056219085432484
 Animator:
   serializedVersion: 7
@@ -146,3 +130,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03816412, y: 0.039794452, z: 0.039794445}
   m_Center: {x: -0.0029988058, y: -0.0221017, z: -0.0017602856}
+--- !u!114 &2406111669170108260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439760380054801303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38f2a9ac000bbf49901ecf2c30ed679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RelicReward
+  relicNumber: 1

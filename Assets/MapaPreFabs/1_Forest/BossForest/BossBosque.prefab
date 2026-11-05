@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Anubis
   currentHealth: 500
   maxHealth: 500
-  barraVida: {fileID: 8497526374368425084, guid: af3578d3163d1f24b8f36af05e3125ab, type: 3}
+  barraVida: {fileID: 0}
   bossHealthPanel: {fileID: 0}
   portalNextZone: {fileID: 5780489895978701140, guid: 2853d8bac3101b74b93ee808a87933d1, type: 3}
   damage: 3
@@ -164,9 +164,10 @@ MonoBehaviour:
   target: {fileID: 919132149155446097, guid: b55683987c2d6f74f94753272090f83f, type: 3}
   deathDelay: 3
   musicManager: {fileID: 0}
-  Reliquia: {fileID: 919132149155446097, guid: 6e6c5a016ae9eac4683724322f07baed, type: 3}
-  drop: 5
+  Reliquia: {fileID: 1439760380054801303, guid: 67f271b5094eb934cada38e737bffab6, type: 3}
+  drop: 0
   expBoss: 20
+  relicNumber: 1
 --- !u!1001 &5132010284772124464
 PrefabInstance:
   m_ObjectHideFlags: 0

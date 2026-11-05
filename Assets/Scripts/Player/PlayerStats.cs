@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using StarterAssets;
+using System.Collections;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerStats : MonoBehaviour
     [Header("Muerte")]
     [SerializeField] private GameObject panelMuerte;
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private Transform spawnBase;
+    [SerializeField] private float delayPanelMuerte = 2f;
     private bool isDead = false;
 
     [Header("Coins")]
@@ -143,6 +146,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        Debug.Log("Jugador recibe daño: " + amount);
         if (isDead) return;
 
         life -= amount;
@@ -178,10 +182,53 @@ public class PlayerStats : MonoBehaviour
         if (playerAnimator != null)
             playerAnimator.SetBool("IsDead", true);
 
+        // Frena el movimiento mientras se reproduce la animación
+        if (ThirdPersonController != null)
+            ThirdPersonController.enabled = false;
+
+        StartCoroutine(MostrarPanelMuerte());
+    }
+
+    private IEnumerator MostrarPanelMuerte()
+    {
+        // Deja que se vea la animación antes de pausar
+        yield return new WaitForSeconds(delayPanelMuerte);
+
         if (panelMuerte != null)
             panelMuerte.SetActive(true);
 
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    // Botón "Volver a la base"
+    public void RespawnEnBase()
+    {
+        isDead = false;
+        life = lifeMax;
+        vida.fillAmount = 1f;
+
+        if (playerAnimator != null)
+            playerAnimator.SetBool("IsDead", false);
+
+        CharacterController cc = GetComponent<CharacterController>();
+        if (spawnBase != null && cc != null)
+        {
+            cc.enabled = false;
+            transform.position = spawnBase.position;
+            cc.enabled = true;
+        }
+
+        if (ThirdPersonController != null)
+            ThirdPersonController.enabled = true;
+
+        if (panelMuerte != null)
+            panelMuerte.SetActive(false);
+
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 

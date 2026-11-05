@@ -40,6 +40,12 @@ public class BossMovement : MonoBehaviour
     [SerializeField] float expBoss;
     public float ExpBoss => expBoss;
 
+    [Header("Jefe final")]
+    [SerializeField] private bool isFinalBoss = false;
+    [SerializeField] private float victoryDelay = 2f;
+
+    [SerializeField] private int relicNumber = 1;
+
     private float nextAttackTime = 1f;
     private bool musicaCombateActivada = false;
     private bool isDead;
@@ -77,6 +83,7 @@ public class BossMovement : MonoBehaviour
     void Update()
     {
         if (isDead || target == null) return;
+        Debug.Log("Boss intenta atacar");
 
         float distance = Vector3.Distance(transform.position, target.transform.position);
 
@@ -188,9 +195,19 @@ public class BossMovement : MonoBehaviour
 
     private void DropReliquia()
     {
-        if (Reliquia != null)
-            Instantiate(Reliquia, transform.position, transform.rotation);
+        if (Reliquia == null) return;
+
+        GameObject relic = Instantiate(Reliquia, transform.position + Vector3.up, Quaternion.identity);
+
+        RelicReward reward = relic.GetComponent<RelicReward>();
+        if (reward != null)
+            reward.SetRelicNumber(relicNumber);
+
+        if (isFinalBoss && VictoryUI.Instance != null)
+            VictoryUI.Instance.ShowDelayed(victoryDelay);
     }
+
+
 
     private void ActualizarBarra()
     {
@@ -208,6 +225,7 @@ public class BossMovement : MonoBehaviour
 
     public void HitPlayer()
     {
+        Debug.Log("HitPlayer llamado");
         if (isDead || target == null) return;
 
         // Solo daña si el jugador sigue cerca cuando cae el golpe de la animación

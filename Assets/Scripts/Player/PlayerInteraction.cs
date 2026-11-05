@@ -63,6 +63,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext ctx)
     {
+        Debug.Log("F presionada | hay interactuable: " + (currentInteractable != null));
+
         if (currentInteractable != null)
             currentInteractable.Interact();
     }

@@ -16,6 +16,12 @@ public class FinalBossTotem : MonoBehaviour, IInteractable, IPromptable
     [Header("Cartel")]
     [SerializeField] private string textoCartel = "Invocar al jefe final [F]";
 
+    /*[Header("Interacción")]
+    [SerializeField] private float interactRange = 3f;
+
+    public int Priority => 10;
+    public float InteractRange => interactRange;*/
+
     private bool invocado = false;
 
     // Aparece el cartel solo si tiene las 4 reliquias (o ya canjeó la llave)
